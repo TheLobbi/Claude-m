@@ -1,0 +1,12 @@
+{
+  "name": "security-read",
+  "description": "Microsoft Graph Security and Defender XDR read surfaces.",
+  "clientInstallable": true,
+  "namespaces": ["security"],
+  "resources": ["https://graph.microsoft.com", "https://api.security.microsoft.com"],
+  "graphApplicationPermissions": ["SecurityAlert.Read.All", "SecurityIncident.Read.All", "SecurityEvents.Read.All", "ThreatHunting.Read.All", "ThreatSubmission.Read.All"],
+  "graphDelegatedPermissions": [],
+  "servicePermissions": ["Defender XDR API application permissions"],
+  "tools": ["security_*", "defender_*"],
+  "prerequisites": ["Defender XDR API access enabled and licensed"]
+}

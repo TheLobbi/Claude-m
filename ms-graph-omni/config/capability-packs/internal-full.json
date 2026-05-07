@@ -1,0 +1,12 @@
+{
+  "name": "internal-full",
+  "description": "Lobbi internal all-capability pack for existing broad administrative workflows.",
+  "clientInstallable": false,
+  "namespaces": ["tenant", "identity", "collaboration", "meetings", "power-platform", "exchange", "audit", "security", "endpoint", "analytics", "change-tracking", "azure-ops", "raw-graph"],
+  "resources": ["https://graph.microsoft.com", "https://manage.office.com", "https://outlook.office365.com", "https://api.bap.microsoft.com", "dataverse-environment-url", "https://api.security.microsoft.com", "https://analysis.windows.net/powerbi/api", "https://api.fabric.microsoft.com", "https://management.azure.com"],
+  "graphApplicationPermissions": ["Directory.ReadWrite.All", "Application.ReadWrite.All", "AuditLog.Read.All", "Reports.Read.All", "SecurityIncident.ReadWrite.All", "DeviceManagementManagedDevices.ReadWrite.All"],
+  "graphDelegatedPermissions": ["openid", "profile", "email", "offline_access", "User.Read"],
+  "servicePermissions": ["Exchange.ManageAsApp", "ActivityFeed.Read", "Power Platform admin application registration", "Power BI/Fabric service principal access", "Azure RBAC"],
+  "tools": ["*"],
+  "prerequisites": ["Internal Lobbi tenant only"]
+}

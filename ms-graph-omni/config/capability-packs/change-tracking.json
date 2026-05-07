@@ -1,0 +1,11 @@
+{
+  "name": "change-tracking",
+  "description": "Graph delta and webhook subscription surfaces.",
+  "clientInstallable": true,
+  "namespaces": ["change-tracking"],
+  "resources": ["https://graph.microsoft.com"],
+  "graphApplicationPermissions": ["Files.ReadWrite.All", "Sites.ReadWrite.All", "Mail.ReadWrite", "Calendars.ReadWrite", "ChannelMessage.Read.All"],
+  "graphDelegatedPermissions": ["Files.ReadWrite.All", "Sites.ReadWrite.All", "Mail.ReadWrite", "Calendars.ReadWrite"],
+  "tools": ["delta_*", "subscriptions_*"],
+  "prerequisites": ["Reachable webhook receiver for push subscriptions"]
+}

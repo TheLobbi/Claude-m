@@ -1,0 +1,12 @@
+{
+  "name": "power-platform",
+  "description": "Power Platform admin, Dataverse, Power Apps, and Power Automate management.",
+  "clientInstallable": true,
+  "namespaces": ["power-platform"],
+  "resources": ["https://api.bap.microsoft.com", "dataverse-environment-url"],
+  "graphApplicationPermissions": [],
+  "graphDelegatedPermissions": [],
+  "servicePermissions": ["Power Platform admin application registration", "Dataverse application user"],
+  "tools": ["powerPlatform_*", "powerApps_*", "powerAutomate_*", "dataverse_*"],
+  "prerequisites": ["Power Platform service principal registered with tenant", "Environment IDs or Dataverse URLs supplied for environment-scoped tools"]
+}

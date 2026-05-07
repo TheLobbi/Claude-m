@@ -1,0 +1,51 @@
+{
+  "name": "ms-graph-omni",
+  "version": "0.2.0",
+  "description": "Microsoft Graph + Entra + Office file ops MCP for Claude. Certificate-based app-only auth via Azure Key Vault + delegated auth with persistent token cache. Covers Outlook, Teams, SharePoint, OneDrive, Planner, ToDo, OneNote, Users, Groups, Entra admin, Excel/Word/PowerPoint/Loop file ops, Search, Sites.",
+  "author": {
+    "name": "Markus Ahling",
+    "email": "markus@thelobbi.io"
+  },
+  "keywords": [
+    "microsoft-graph",
+    "graph-api",
+    "entra",
+    "azure-ad",
+    "outlook",
+    "teams",
+    "sharepoint",
+    "onedrive",
+    "planner",
+    "todo",
+    "onenote",
+    "excel",
+    "word",
+    "powerpoint",
+    "loop",
+    "mcp",
+    "m365",
+    "office365",
+    "key-vault",
+    "msal"
+  ],
+  "license": "MIT",
+  "repository": "https://github.com/markus41/claude-hub",
+  "contextEntry": "CLAUDE.md",
+  "context": {
+    "entry": "CLAUDE.md",
+    "title": "MS Graph Omni",
+    "summary": "Full Microsoft Graph + Entra admin + Office file ops MCP with KV-backed cert auth.",
+    "tags": ["microsoft-graph", "m365", "entra", "mcp"],
+    "bootstrapFiles": ["CLAUDE.md"],
+    "maxTokens": 600,
+    "excludeGlobs": [
+      "**/node_modules/**",
+      "**/dist/**",
+      "**/.cache/**"
+    ],
+    "lazyLoadSections": [
+      "skills/*/SKILL.md",
+      "docs/**/*.md"
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "analytics-read",
+  "description": "Power BI and Microsoft Fabric read/admin inventory surfaces.",
+  "clientInstallable": true,
+  "namespaces": ["analytics"],
+  "resources": ["https://analysis.windows.net/powerbi/api", "https://api.fabric.microsoft.com"],
+  "graphApplicationPermissions": [],
+  "graphDelegatedPermissions": [],
+  "servicePermissions": ["Power BI service principal admin settings", "Fabric service principal workspace access"],
+  "tools": ["powerbi_*", "fabric_*"],
+  "prerequisites": ["Power BI/Fabric service principal access enabled", "Workspace access granted to the service principal where needed"]
+}

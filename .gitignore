@@ -13,5 +13,11 @@ research-output/
 !plugins/*/dist/**/*.d.ts.map
 plugins/*/package-lock.json
 
+# Flat-layout plugins (this mirror's convention) that ship a built MCP
+!ms-graph-omni/dist/
+!ms-graph-omni/dist/**/*.js.map
+!ms-graph-omni/dist/**/*.d.ts
+!ms-graph-omni/dist/**/*.d.ts.map
+
 # Claude Code local overrides
 .claude/CLAUDE.local.md

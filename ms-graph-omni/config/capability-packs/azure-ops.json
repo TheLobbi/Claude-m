@@ -1,0 +1,12 @@
+{
+  "name": "azure-ops",
+  "description": "Azure Resource Manager and tenant infrastructure read/validation surfaces.",
+  "clientInstallable": true,
+  "namespaces": ["azure-ops"],
+  "resources": ["https://management.azure.com", "https://graph.microsoft.com"],
+  "graphApplicationPermissions": ["Application.Read.All", "Directory.Read.All"],
+  "graphDelegatedPermissions": [],
+  "servicePermissions": ["Azure RBAC Reader or narrower subscription/resource-group assignment"],
+  "tools": ["azure_*"],
+  "prerequisites": ["Azure RBAC assignment scoped to approved subscriptions or resource groups"]
+}

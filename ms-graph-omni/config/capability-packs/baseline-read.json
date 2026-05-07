@@ -1,0 +1,11 @@
+{
+  "name": "baseline-read",
+  "description": "Minimum client-safe tenant discovery and identity read pack.",
+  "clientInstallable": true,
+  "namespaces": ["tenant", "identity"],
+  "resources": ["https://graph.microsoft.com"],
+  "graphApplicationPermissions": ["Organization.Read.All", "User.Read.All", "Group.Read.All", "Directory.Read.All"],
+  "graphDelegatedPermissions": ["openid", "profile", "email", "offline_access", "User.Read"],
+  "tools": ["tenant_list", "org_getTenant", "users_list", "users_get", "groups_list", "groups_get"],
+  "prerequisites": ["Microsoft Graph admin consent"]
+}

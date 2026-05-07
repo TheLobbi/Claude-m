@@ -1,0 +1,12 @@
+{
+  "name": "audit-compliance",
+  "description": "Office Management Activity API and Purview audit/compliance read surfaces.",
+  "clientInstallable": true,
+  "namespaces": ["audit"],
+  "resources": ["https://graph.microsoft.com", "https://manage.office.com"],
+  "graphApplicationPermissions": ["AuditLog.Read.All", "Reports.Read.All"],
+  "graphDelegatedPermissions": [],
+  "servicePermissions": ["ActivityFeed.Read", "ActivityFeed.ReadDlp"],
+  "tools": ["omi_*", "purview_*"],
+  "prerequisites": ["Office 365 Management Activity API permissions", "Audit logging enabled in the tenant"]
+}

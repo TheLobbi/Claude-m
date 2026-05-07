@@ -2,12 +2,12 @@
   "$schema": "https://raw.githubusercontent.com/anthropics/claude-code/main/schemas/marketplace.schema.json",
   "name": "claude-m-microsoft-marketplace",
   "description": "Focused Claude marketplace for Microsoft workflow plugins maintained in this repository.",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "owner": {
     "name": "Markus Ahling"
   },
   "metadata": {
-    "version": "2.0.0",
+    "version": "2.1.0",
     "repository": {
       "type": "git",
       "url": "https://github.com/markus41/Claude-m"
@@ -1092,7 +1092,7 @@
       "name": "fabric-data-engineering",
       "source": "./fabric-data-engineering",
       "description": "Microsoft Fabric Data Engineering — lakehouses, Spark notebooks, data pipelines, Delta Lake tables, lakehouse SQL endpoints, multi-notebook orchestration, workspace lifecycle management, pipeline monitoring, and advanced optimization",
-      "version": "2.0.0",
+      "version": "2.1.0",
       "author": {
         "name": "Markus Ahling"
       },
@@ -2265,7 +2265,7 @@
       "name": "azure-devops",
       "source": "./azure-devops",
       "description": "Comprehensive Azure DevOps expertise — Git repos with passwordless auth (GCM, WIF, SSH), YAML and Classic pipelines, deployment environments, agent pools, work items, boards, sprints, test plans, security namespaces, dashboards, wikis, service hooks, Analytics OData, CLI, and extensions",
-      "version": "2.0.0",
+      "version": "2.1.0",
       "author": {
         "name": "Markus Ahling"
       },
@@ -2501,7 +2501,7 @@
       "name": "fluent-ui-design",
       "source": "./fluent-ui-design",
       "description": "Microsoft Fluent 2 design system mastery — design tokens, color system, typography, layout, components, Teams theming, advanced UI patterns, Griffel styling, accessibility, responsive design, and Figma design kits",
-      "version": "2.0.0",
+      "version": "2.1.0",
       "author": {
         "name": "Markus Ahling"
       },
@@ -3470,7 +3470,7 @@
       "name": "onenote-knowledge-base",
       "source": "./onenote-knowledge-base",
       "description": "OneNote Knowledge Base - headless-first Graph automation for advanced page architecture, styling, and task workflows",
-      "version": "2.0.0",
+      "version": "2.1.0",
       "author": {
         "name": "Markus Ahling"
       },
@@ -3804,6 +3804,57 @@
         "governance",
         "archival",
         "naming-policy"
+      ],
+      "strict": true
+    },
+    {
+      "name": "ms-graph-omni",
+      "source": "./ms-graph-omni",
+      "description": "Full Microsoft Graph + Entra admin + Office file ops MCP server (183 tools). Cert-based app-only auth via Azure Key Vault + delegated auth with persistent token cache — no device-code re-entry. Multi-tenant aware via MSGO_TENANTS_JSON. Covers Outlook, Teams, SharePoint, OneDrive, Planner, ToDo, OneNote, Users, Groups, Entra admin, Excel/Word/PowerPoint/Loop file ops, Search, Sites, Exchange admin, Power Platform, Intune, Defender, Power BI/Fabric, Azure Ops.",
+      "version": "0.2.0",
+      "author": {
+        "name": "Markus Ahling"
+      },
+      "license": "MIT",
+      "homepage": "https://github.com/markus41/Claude-m/blob/main/ms-graph-omni/README.md",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/markus41/Claude-m"
+      },
+      "category": "cloud",
+      "tags": [
+        "microsoft",
+        "graph-api",
+        "entra-id",
+        "outlook",
+        "teams",
+        "sharepoint",
+        "onedrive",
+        "planner",
+        "office",
+        "key-vault",
+        "msal",
+        "mcp"
+      ],
+      "keywords": [
+        "microsoft-graph",
+        "graph-api",
+        "entra-id",
+        "outlook",
+        "teams",
+        "sharepoint",
+        "onedrive",
+        "planner",
+        "todo",
+        "onenote",
+        "excel",
+        "word",
+        "powerpoint",
+        "loop",
+        "office365",
+        "key-vault",
+        "msal",
+        "mcp"
       ],
       "strict": true
     }

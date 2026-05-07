@@ -1,0 +1,11 @@
+{
+  "name": "meetings",
+  "description": "Teams meetings, transcripts, recordings, and call records.",
+  "clientInstallable": true,
+  "namespaces": ["meetings"],
+  "resources": ["https://graph.microsoft.com"],
+  "graphApplicationPermissions": ["OnlineMeetings.Read.All", "OnlineMeetings.ReadWrite.All", "CallRecords.Read.All"],
+  "graphDelegatedPermissions": ["OnlineMeetings.ReadWrite"],
+  "tools": ["onlineMeetings_*", "transcripts_*", "recordings_*", "callRecords_*"],
+  "prerequisites": ["Microsoft Graph admin consent", "Application access policy for app-only meeting artifacts where required"]
+}

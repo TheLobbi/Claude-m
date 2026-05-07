@@ -1,0 +1,11 @@
+{
+  "name": "endpoint-read",
+  "description": "Read-only Intune endpoint, app, device, and compliance inventory.",
+  "clientInstallable": true,
+  "namespaces": ["endpoint"],
+  "resources": ["https://graph.microsoft.com"],
+  "graphApplicationPermissions": ["DeviceManagementApps.Read.All", "DeviceManagementConfiguration.Read.All", "DeviceManagementManagedDevices.Read.All", "DeviceManagementRBAC.Read.All", "DeviceManagementServiceConfig.Read.All", "Device.Read.All"],
+  "graphDelegatedPermissions": [],
+  "tools": ["intune_*"],
+  "prerequisites": ["Active Intune licensing in the tenant"]
+}

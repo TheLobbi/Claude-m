@@ -1,0 +1,9 @@
+{
+  "_comment": "Copy this file to runtime.json and fill in values for your tenant. Auto-loaded by dist/config.js if present. Alternatively, set MSGO_TENANT_ID / MSGO_CLIENT_ID / MSGO_KEY_VAULT_URL / MSGO_CERT_NAME env vars (preferred — keeps tenant out of the repo).",
+  "clientId": "00000000-0000-0000-0000-000000000000",
+  "spObjectId": "00000000-0000-0000-0000-000000000000",
+  "vaultUrl": "https://your-keyvault-name.vault.azure.net/",
+  "certName": "your-cert-name",
+  "appObjectId": "00000000-0000-0000-0000-000000000000",
+  "tenantId": "00000000-0000-0000-0000-000000000000"
+}

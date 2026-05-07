@@ -1,0 +1,51 @@
+{
+  "name": "@lobbi/ms-graph-omni",
+  "version": "0.2.0-dev",
+  "description": "Microsoft Graph + Entra + Office file ops MCP server with KV-backed cert auth",
+  "type": "module",
+  "main": "dist/server.js",
+  "bin": {
+    "ms-graph-omni": "dist/server.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "node dist/server.js",
+    "receiver": "node dist/streaming/webhookReceiver.js",
+    "clean": "rimraf dist",
+    "lint": "tsc --noEmit",
+    "provision": "pwsh -File scripts/provision-azure.ps1",
+    "verify": "node dist/verify.js",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "@azure/identity": "^4.5.0",
+    "@azure/keyvault-certificates": "^4.9.0",
+    "@azure/keyvault-secrets": "^4.9.0",
+    "@azure/msal-node": "^2.16.2",
+    "@azure/msal-node-extensions": "^1.5.11",
+    "@microsoft/microsoft-graph-client": "^3.0.7",
+    "@microsoft/microsoft-graph-types": "^2.40.0",
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "isomorphic-fetch": "^3.0.0",
+    "node-forge": "^1.3.1",
+    "open": "^10.1.0",
+    "pino": "^9.5.0",
+    "pino-pretty": "^11.3.0",
+    "zod": "^3.23.8",
+    "zod-to-json-schema": "^3.23.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.19.17",
+    "@types/node-forge": "^1.3.11",
+    "rimraf": "^6.0.1",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.9"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT",
+  "author": "Markus Ahling <markus@thelobbi.io>"
+}

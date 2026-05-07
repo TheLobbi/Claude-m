@@ -1,0 +1,12 @@
+{
+  "name": "exchange-admin",
+  "description": "Exchange Online administrative configuration and mailbox operations.",
+  "clientInstallable": true,
+  "namespaces": ["exchange"],
+  "resources": ["https://outlook.office365.com"],
+  "graphApplicationPermissions": [],
+  "graphDelegatedPermissions": [],
+  "servicePermissions": ["Exchange.ManageAsApp"],
+  "tools": ["exchange_*"],
+  "prerequisites": ["Office 365 Exchange Online Exchange.ManageAsApp application permission", "Exchange role assignment or role group membership for the service principal"]
+}

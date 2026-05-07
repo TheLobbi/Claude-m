@@ -1,0 +1,15 @@
+node_modules/
+*.log
+.env
+.env.local
+.cache/
+*.pfx
+*.pem
+*.key
+.msgo-cache/
+coverage/
+.DS_Store
+Thumbs.db
+
+# Tenant-specific local config — never commit. Use runtime.json.example as template.
+config/runtime.json
