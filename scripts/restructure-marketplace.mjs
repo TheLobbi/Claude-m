@@ -74,8 +74,7 @@ function normalizePluginManifest(folder, plugin) {
     author: current.author || DEFAULT_AUTHOR,
     license: current.license || DEFAULT_LICENSE,
     homepage: current.homepage || homepageFor(folder),
-    repository:
-      current.repository || { type: "git", url: REPO_URL },
+    repository: current.repository || REPO_URL,
     keywords: current.keywords || plugin.tags || [],
     ...current,
   };
@@ -83,7 +82,7 @@ function normalizePluginManifest(folder, plugin) {
   // Re-apply explicit defaults if existing fields were present but empty.
   if (!merged.license) merged.license = DEFAULT_LICENSE;
   if (!merged.homepage) merged.homepage = homepageFor(folder);
-  if (!merged.repository) merged.repository = { type: "git", url: REPO_URL };
+  if (!merged.repository) merged.repository = REPO_URL;
   if (!merged.author) merged.author = DEFAULT_AUTHOR;
   if (!merged.keywords || merged.keywords.length === 0) {
     merged.keywords = plugin.tags || [];
@@ -154,8 +153,6 @@ function main() {
     owner: marketplace.owner || DEFAULT_AUTHOR,
     metadata: {
       version: MARKETPLACE_VERSION,
-      repository: { type: "git", url: REPO_URL },
-      license: DEFAULT_LICENSE,
     },
     plugins: [],
   };

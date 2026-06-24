@@ -1,0 +1,48 @@
+{
+  "name": "powerbi-custom-visuals",
+  "version": "1.0.0",
+  "description": "Build, debug, package, and certify custom Power BI visuals with the pbiviz toolchain — project scaffolding, capabilities and dataView mapping, the IVisual API, the modern format pane and formatting model, selection and cross-filtering, tooltips, unit testing, and AppSource certification",
+  "author": {
+    "name": "Markus Ahling"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/markus41/Claude-m/blob/main/powerbi-custom-visuals/README.md",
+  "repository": "https://github.com/markus41/Claude-m",
+  "keywords": [
+    "power-bi",
+    "custom-visuals",
+    "pbiviz",
+    "powerbi-visuals-tools",
+    "ivisual",
+    "capabilities",
+    "dataview-mapping",
+    "format-pane",
+    "formatting-model",
+    "d3",
+    "typescript",
+    "selection-api",
+    "tooltips",
+    "appsource",
+    "certification",
+    "visual-development"
+  ],
+  "skills": [
+    "./skills/powerbi-custom-visuals/"
+  ],
+  "commands": [
+    "./commands/pbiviz-setup.md",
+    "./commands/pbiviz-scaffold.md",
+    "./commands/pbiviz-capabilities.md",
+    "./commands/pbiviz-dataview.md",
+    "./commands/pbiviz-format-pane.md",
+    "./commands/pbiviz-interactivity.md",
+    "./commands/pbiviz-debug.md",
+    "./commands/pbiviz-package.md",
+    "./commands/pbiviz-certify.md",
+    "./commands/pbiviz-migrate.md"
+  ],
+  "agents": [
+    "./agents/visual-reviewer.md",
+    "./agents/visual-performance-advisor.md"
+  ]
+}

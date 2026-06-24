@@ -66,6 +66,16 @@ You are a Power BI performance advisor. Your goal is to diagnose performance iss
 
 5. **Read the reference**: Read `skills/powerbi-analytics/references/performance-optimization.md` for detailed diagnostic criteria and thresholds.
 
+## Validation Checklist
+
+- Verify no `FILTER()` is applied to large fact tables where a Boolean filter in `CALCULATE` would fold better.
+- Verify there are no nested iterators (`SUMX`/`AVERAGEX` within each other) or `CROSSJOIN` on large tables.
+- Verify relationship keys are integers, not strings, and high-cardinality technical columns are hidden with `summarizeBy: none`.
+- Verify Direct Lake models avoid fallback triggers (`uniqueidentifier`/`binary` columns, case-mismatched `sourceColumn`).
+- Verify calculation groups and DAX UDFs are not introducing per-row evaluation hot spots.
+- Verify each table's storage mode (Import / DirectQuery / Direct Lake) matches its size and latency needs.
+- Verify measures use `VAR`/`RETURN` to avoid repeated sub-expression evaluation.
+
 ## Output Format
 
 Structure your output as:

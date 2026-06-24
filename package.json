@@ -72,6 +72,10 @@
     },
     "testMatch": [
       "**/tests/**/*.test.ts"
+    ],
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/ms-graph-omni/"
     ]
   }
 }

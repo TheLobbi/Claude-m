@@ -46,7 +46,7 @@
 
 | Component | Items |
 |---|---|
-| **Commands** | `/pbi-dashboard-create` · `/pbi-dataflow` · `/pbi-dataset-refresh` · `/pbi-deploy-pipeline` · `/pbi-direct-lake-model` · `/pbi-embed` · `/pbi-fabric-notebook` · `/pbi-fabric-pipeline` · `/pbi-measure` · `/pbi-model-validate` · `/pbi-query` · `/pbi-report-create` · `/pbi-rls-role` · `/pbi-scaffold` · `/pbi-scorecard-manage` · `/pbi-setup` · `/pbi-workspace-create` |
+| **Commands** | `/pbi-calc-group` · `/pbi-dashboard-create` · `/pbi-dataflow` · `/pbi-dataset-refresh` · `/pbi-deploy-pipeline` · `/pbi-direct-lake-model` · `/pbi-embed` · `/pbi-fabric-notebook` · `/pbi-fabric-pipeline` · `/pbi-measure` · `/pbi-model-validate` · `/pbi-query` · `/pbi-report-create` · `/pbi-rls-role` · `/pbi-scaffold` · `/pbi-scorecard-manage` · `/pbi-setup` · `/pbi-tom` · `/pbi-workspace-create` |
 | **Agents** | `dax-reviewer` · `pbi-performance-advisor` |
 | **Skills** | `powerbi-analytics` |
 
@@ -138,6 +138,10 @@ Run `/setup` to configure authentication and verify Power BI access:
 | Area | What Claude Can Do |
 |------|-------------------|
 | **DAX Measures** | Generate, review, and optimize DAX measures with correct filter context, time intelligence, and KPI patterns |
+| **DAX UDFs** | Author reusable, typed DAX user-defined functions (DQV/TMDL), with daxlib package guidance |
+| **Calculation Groups** | Build calculation items (time intelligence, currency, format switching) with precedence and dynamic format strings |
+| **TMDL** | Edit the model as code, serialize/deserialize with `TmdlSerializer`, and review in Git |
+| **TOM / XMLA / PowerShell** | Automate semantic models in C#/.NET over XMLA, and script admin/CI with MicrosoftPowerBIMgmt |
 | **Power Query M** | Generate M code for data source connections, transformations, pagination, and custom functions |
 | **PBIP Projects** | Scaffold complete Power BI Project structures with TMDL files, model definitions, and report layouts |
 | **REST API** | Generate TypeScript code for workspace management, dataset refresh, report export, embedding, and deployment pipelines |
@@ -160,6 +164,8 @@ Run `/setup` to configure authentication and verify Power BI access:
 | Command | Description |
 |---------|-------------|
 | `/pbi-measure` | Generate a DAX measure from natural language description |
+| `/pbi-calc-group` | Author a calculation group (time intelligence, currency, format) as TMDL |
+| `/pbi-tom` | Generate C#/.NET TOM automation over the XMLA endpoint (read/modify/refresh/serialize) |
 | `/pbi-query` | Generate Power Query M code for data transformation |
 | `/pbi-workspace-create` | Generate REST API code to create and configure a workspace |
 | `/pbi-dataset-refresh` | Generate code to trigger and monitor a dataset refresh |
@@ -196,6 +202,10 @@ powerbi-fabric/
 │       ├── SKILL.md                              # Core knowledge (triggers on DAX, Power Query, PBIP, etc.)
 │       ├── references/
 │       │   ├── dax-patterns.md                   # DAX functions, time intelligence, KPI patterns
+│       │   ├── dax-udfs.md                        # DAX user-defined functions: syntax, type hints, daxlib
+│       │   ├── calculation-groups.md             # Calculation items, SELECTEDMEASURE, precedence, format strings
+│       │   ├── tmdl.md                            # Model-as-code: grammar, folder layout, TmdlSerializer
+│       │   ├── programmatic-apis.md              # TOM/XMLA (.NET), PowerShell, client JS embedding
 │       │   ├── power-query-m.md                  # M language, source connections, transforms, folding
 │       │   ├── pbi-rest-api.md                   # REST API endpoints with TypeScript examples
 │       │   ├── pbip-format.md                    # PBIP structure, TMDL, model.bim, Git workflow
@@ -210,6 +220,8 @@ powerbi-fabric/
 │           └── dataflow-gen2.md                  # SQL folding, REST pagination, incremental refresh M code
 ├── commands/
 │   ├── pbi-measure.md
+│   ├── pbi-calc-group.md
+│   ├── pbi-tom.md
 │   ├── pbi-query.md
 │   ├── pbi-workspace-create.md
 │   ├── pbi-dataset-refresh.md
@@ -228,7 +240,7 @@ powerbi-fabric/
 
 ## Trigger Keywords
 
-The skill activates automatically when conversations mention: `dax`, `DAX measure`, `power query`, `M code`, `power bi`, `pbip`, `pbix`, `semantic model`, `fabric`, `lakehouse`, `pbi workspace`, `dataset refresh`, `power query M`, `calculated column`, `measure`, `embed token`, `deployment pipeline`, `performance`, `VertiPaq`, `direct lake fallback`, `dataflow gen2`.
+The skill activates automatically when conversations mention: `dax`, `DAX measure`, `dax udf`, `user defined function`, `calculation group`, `calculation item`, `selectedmeasure`, `tmdl`, `model as code`, `tom`, `tabular object model`, `xmla`, `powerbi powershell`, `power query`, `M code`, `power bi`, `pbip`, `pbix`, `semantic model`, `fabric`, `lakehouse`, `pbi workspace`, `dataset refresh`, `power query M`, `calculated column`, `measure`, `embed token`, `deployment pipeline`, `performance`, `VertiPaq`, `direct lake fallback`, `dataflow gen2`.
 
 ## Author
 

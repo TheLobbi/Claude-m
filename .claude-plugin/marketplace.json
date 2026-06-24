@@ -7,12 +7,7 @@
     "name": "Markus Ahling"
   },
   "metadata": {
-    "version": "2.1.0",
-    "repository": {
-      "type": "git",
-      "url": "https://github.com/markus41/Claude-m"
-    },
-    "license": "MIT"
+    "version": "2.1.0"
   },
   "plugins": [
     {
@@ -25,10 +20,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/agent-foundry/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "cloud",
       "tags": [
         "microsoft",
@@ -65,10 +57,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/azure-ai-services/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "cloud",
       "tags": [
         "microsoft",
@@ -108,10 +97,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/azure-api-management/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "cloud",
       "tags": [
         "azure",
@@ -135,10 +121,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/azure-backup-recovery/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "cloud",
       "tags": [
         "azure",
@@ -162,10 +145,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/azure-containers/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "cloud",
       "tags": [
         "microsoft",
@@ -199,10 +179,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/azure-cost-governance/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "cloud",
       "tags": [
         "microsoft",
@@ -271,10 +248,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/azure-functions/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "cloud",
       "tags": [
         "microsoft",
@@ -306,10 +280,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/azure-kubernetes/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "cloud",
       "tags": [
         "azure",
@@ -331,10 +302,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/azure-logic-apps/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "cloud",
       "tags": [
         "azure",
@@ -372,10 +340,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/azure-monitor/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "cloud",
       "tags": [
         "microsoft",
@@ -409,10 +374,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/azure-networking/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "cloud",
       "tags": [
         "microsoft",
@@ -538,10 +500,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/azure-service-bus/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "cloud",
       "tags": [
         "azure",
@@ -565,10 +524,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/azure-service-health/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "cloud",
       "tags": [
         "azure",
@@ -592,10 +548,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/azure-sql-database/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "cloud",
       "tags": [
         "microsoft",
@@ -629,10 +582,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/azure-static-web-apps/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "cloud",
       "tags": [
         "microsoft",
@@ -662,10 +612,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/azure-storage/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "cloud",
       "tags": [
         "microsoft",
@@ -699,10 +646,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/azure-tenant-assessment/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "cloud",
       "tags": [
         "microsoft",
@@ -732,10 +676,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/azure-web-apps/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "cloud",
       "tags": [
         "microsoft",
@@ -765,10 +706,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/dataverse-schema/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "cloud",
       "tags": [
         "microsoft",
@@ -799,10 +737,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/license-optimizer/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "cloud",
       "tags": [
         "microsoft",
@@ -834,10 +769,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/m365-admin/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "cloud",
       "tags": [
         "microsoft",
@@ -876,10 +808,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/m365-platform-clients/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "cloud",
       "tags": [
         "microsoft",
@@ -914,10 +843,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/plugins/azure/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "cloud",
       "tags": [
         "microsoft",
@@ -941,10 +867,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/msp-tenant-provisioning/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "cloud",
       "tags": [
         "microsoft",
@@ -982,10 +905,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/fabric-ai-agents/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "analytics",
       "tags": [
         "microsoft",
@@ -1024,10 +944,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/fabric-capacity-ops/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "analytics",
       "tags": [
         "microsoft",
@@ -1061,10 +978,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/fabric-data-activator/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "analytics",
       "tags": [
         "microsoft",
@@ -1092,16 +1006,13 @@
       "name": "fabric-data-engineering",
       "source": "./fabric-data-engineering",
       "description": "Microsoft Fabric Data Engineering — lakehouses, Spark notebooks, data pipelines, Delta Lake tables, lakehouse SQL endpoints, multi-notebook orchestration, workspace lifecycle management, pipeline monitoring, and advanced optimization",
-      "version": "2.1.0",
+      "version": "2.0.0",
       "author": {
         "name": "Markus Ahling"
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/fabric-data-engineering/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "analytics",
       "tags": [
         "microsoft",
@@ -1143,10 +1054,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/fabric-data-factory/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "analytics",
       "tags": [
         "microsoft",
@@ -1180,10 +1088,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/fabric-data-prep-jobs/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "analytics",
       "tags": [
         "microsoft",
@@ -1218,10 +1123,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/fabric-data-science/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "analytics",
       "tags": [
         "microsoft",
@@ -1255,10 +1157,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/fabric-data-store/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "analytics",
       "tags": [
         "microsoft",
@@ -1293,10 +1192,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/fabric-data-warehouse/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "analytics",
       "tags": [
         "microsoft",
@@ -1330,10 +1226,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/fabric-graph-geo/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "analytics",
       "tags": [
         "microsoft",
@@ -1369,10 +1262,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/fabric-mirroring/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "analytics",
       "tags": [
         "microsoft",
@@ -1406,10 +1296,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/fabric-mirroring-azure/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "analytics",
       "tags": [
         "microsoft",
@@ -1444,10 +1331,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/fabric-mirroring-external/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "analytics",
       "tags": [
         "microsoft",
@@ -1482,10 +1366,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/fabric-observability/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "analytics",
       "tags": [
         "microsoft",
@@ -1519,10 +1400,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/fabric-onelake/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "analytics",
       "tags": [
         "microsoft",
@@ -1556,10 +1434,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/fabric-real-time-analytics/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "analytics",
       "tags": [
         "microsoft",
@@ -1593,10 +1468,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/fabric-semantic-models/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "analytics",
       "tags": [
         "microsoft",
@@ -1623,17 +1495,14 @@
     {
       "name": "powerbi-fabric",
       "source": "./powerbi-fabric",
-      "description": "DAX measures, Power Query M, Power BI Embedded, deployment pipelines, PBIP scaffolding, Fabric Lakehouse, Direct Lake, performance optimization",
-      "version": "1.0.0",
+      "description": "DAX measures, DAX UDFs, calculation groups, Power Query M, TMDL model-as-code, TOM/XMLA and PowerShell automation, Power BI Embedded, deployment pipelines, PBIP scaffolding, Fabric Lakehouse, Direct Lake, performance optimization",
+      "version": "1.1.0",
       "author": {
         "name": "Markus Ahling"
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/powerbi-fabric/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "analytics",
       "tags": [
         "microsoft",
@@ -1646,7 +1515,12 @@
         "lakehouse",
         "embedded",
         "deployment-pipeline",
-        "performance"
+        "performance",
+        "dax-udf",
+        "calculation-groups",
+        "tmdl",
+        "tom",
+        "xmla"
       ],
       "keywords": [
         "power-bi",
@@ -1672,10 +1546,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/powerbi-paginated-reports/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "analytics",
       "tags": [
         "microsoft",
@@ -1707,6 +1578,57 @@
       "strict": true
     },
     {
+      "name": "powerbi-custom-visuals",
+      "source": "./powerbi-custom-visuals",
+      "description": "Build, debug, package, and certify custom Power BI visuals with the pbiviz toolchain — project scaffolding, capabilities and dataView mapping, the IVisual API, the modern format pane and formatting model, selection and cross-filtering, tooltips, unit testing, and AppSource certification",
+      "version": "1.0.0",
+      "author": {
+        "name": "Markus Ahling"
+      },
+      "license": "MIT",
+      "homepage": "https://github.com/markus41/Claude-m/blob/main/powerbi-custom-visuals/README.md",
+      "repository": "https://github.com/markus41/Claude-m",
+      "category": "analytics",
+      "tags": [
+        "microsoft",
+        "power-bi",
+        "custom-visuals",
+        "pbiviz",
+        "powerbi-visuals-tools",
+        "ivisual",
+        "capabilities",
+        "dataview-mapping",
+        "format-pane",
+        "formatting-model",
+        "d3",
+        "typescript",
+        "selection-api",
+        "tooltips",
+        "appsource",
+        "certification",
+        "visual-development"
+      ],
+      "keywords": [
+        "power-bi",
+        "custom-visuals",
+        "pbiviz",
+        "powerbi-visuals-tools",
+        "ivisual",
+        "capabilities",
+        "dataview-mapping",
+        "format-pane",
+        "formatting-model",
+        "d3",
+        "typescript",
+        "selection-api",
+        "tooltips",
+        "appsource",
+        "certification",
+        "visual-development"
+      ],
+      "strict": true
+    },
+    {
       "name": "process-task-mining",
       "source": "./process-task-mining",
       "description": "Process and task mining from M365, Power Automate, and Azure Monitor logs — extract event logs, discover process models, analyze performance, and check conformance",
@@ -1716,10 +1638,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/process-task-mining/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "analytics",
       "tags": [
         "microsoft",
@@ -1753,10 +1672,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/azure-key-vault/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "security",
       "tags": [
         "microsoft",
@@ -1788,10 +1704,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/azure-policy-security/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "security",
       "tags": [
         "microsoft",
@@ -1821,10 +1734,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/defender-endpoint/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "security",
       "tags": [
         "defender",
@@ -1846,10 +1756,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/defender-sentinel/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "security",
       "tags": [
         "microsoft",
@@ -1889,10 +1796,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/entra-access-reviews/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "security",
       "tags": [
         "entra",
@@ -1916,10 +1820,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/entra-id-admin/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "security",
       "tags": [
         "microsoft",
@@ -1966,10 +1867,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/entra-id-security/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "security",
       "tags": [
         "microsoft",
@@ -2002,10 +1900,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/fabric-security-governance/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "security",
       "tags": [
         "microsoft",
@@ -2039,10 +1934,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/graph-investigator/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "security",
       "tags": [
         "microsoft",
@@ -2096,10 +1988,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/lighthouse-health/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "security",
       "tags": [
         "microsoft",
@@ -2131,10 +2020,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/lighthouse-operations/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "security",
       "tags": [
         "microsoft",
@@ -2174,10 +2060,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/microsoft-intune/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "security",
       "tags": [
         "microsoft",
@@ -2199,10 +2082,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/purview-compliance/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "security",
       "tags": [
         "microsoft",
@@ -2236,10 +2116,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/sharing-auditor/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "security",
       "tags": [
         "microsoft",
@@ -2265,16 +2142,13 @@
       "name": "azure-devops",
       "source": "./azure-devops",
       "description": "Comprehensive Azure DevOps expertise — Git repos with passwordless auth (GCM, WIF, SSH), YAML and Classic pipelines, deployment environments, agent pools, work items, boards, sprints, test plans, security namespaces, dashboards, wikis, service hooks, Analytics OData, CLI, and extensions",
-      "version": "2.1.0",
+      "version": "2.0.0",
       "author": {
         "name": "Markus Ahling"
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/azure-devops/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "devops",
       "tags": [
         "microsoft",
@@ -2360,10 +2234,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/azure-dotnet-webapp/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "devops",
       "tags": [
         "microsoft",
@@ -2397,10 +2268,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/azure-graph-dotnet/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "devops",
       "tags": [
         "microsoft",
@@ -2434,10 +2302,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/fabric-developer-runtime/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "devops",
       "tags": [
         "microsoft",
@@ -2470,10 +2335,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/fabric-gitops-cicd/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "devops",
       "tags": [
         "microsoft",
@@ -2500,17 +2362,14 @@
     {
       "name": "fluent-ui-design",
       "source": "./fluent-ui-design",
-      "description": "Microsoft Fluent 2 design system mastery — design tokens, color system, typography, layout, components, Teams theming, advanced UI patterns, Griffel styling, accessibility, responsive design, and Figma design kits",
-      "version": "2.1.0",
+      "description": "Microsoft Fluent 2 design system mastery — design tokens, color system, typography, layout, components, Teams theming, Griffel styling, Next.js SSR, Web Components, charting, cross-platform (iOS/Android), form orchestration, Office Add-ins, B2C UI, accessibility auditing, v8→v9 migration, and Figma design kits",
+      "version": "2.0.0",
       "author": {
         "name": "Markus Ahling"
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/fluent-ui-design/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "devops",
       "tags": [
         "microsoft",
@@ -2534,7 +2393,22 @@
         "color-tokens",
         "layout",
         "adaptive-cards",
-        "copilot"
+        "copilot",
+        "nextjs",
+        "ssr",
+        "web-components",
+        "charting",
+        "ios",
+        "android",
+        "cross-platform",
+        "forms",
+        "formik",
+        "office-addins",
+        "b2c",
+        "migration",
+        "wcag",
+        "slots",
+        "aot"
       ],
       "keywords": [
         "microsoft",
@@ -2584,10 +2458,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/marketplace-dev-tools/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "devops",
       "tags": [
         "microsoft",
@@ -2619,10 +2490,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/plugins/docs/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "devops",
       "tags": [
         "microsoft",
@@ -2648,10 +2516,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/powerplatform-alm/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "devops",
       "tags": [
         "microsoft",
@@ -2684,10 +2549,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/teams-app-dev/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "devops",
       "tags": [
         "microsoft",
@@ -2740,10 +2602,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/business-central/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "productivity",
       "tags": [
         "microsoft",
@@ -2784,10 +2643,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/copilot-studio-bots/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "productivity",
       "tags": [
         "microsoft",
@@ -2820,10 +2676,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/plugins/domain-business-name-finder/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "productivity",
       "tags": [
         "domain",
@@ -2851,10 +2704,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/dynamics-365-crm/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "productivity",
       "tags": [
         "microsoft",
@@ -2893,10 +2743,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/dynamics-365-field-service/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "productivity",
       "tags": [
         "microsoft",
@@ -2935,10 +2782,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/dynamics-365-project-ops/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "productivity",
       "tags": [
         "microsoft",
@@ -2977,10 +2821,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/excel-automation/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "productivity",
       "tags": [
         "microsoft",
@@ -3013,10 +2854,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/excel-office-scripts/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "productivity",
       "tags": [
         "microsoft",
@@ -3047,10 +2885,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/exchange-mailflow/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "productivity",
       "tags": [
         "microsoft",
@@ -3084,10 +2919,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/fabric-distribution-apps/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "productivity",
       "tags": [
         "microsoft",
@@ -3119,10 +2951,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/m365-meeting-intelligence/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "productivity",
       "tags": [
         "m365",
@@ -3146,10 +2975,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/microsoft-bookings/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "productivity",
       "tags": [
         "microsoft",
@@ -3179,10 +3005,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/plugins/excel/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "productivity",
       "tags": [
         "microsoft",
@@ -3206,10 +3029,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/microsoft-forms-surveys/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "productivity",
       "tags": [
         "microsoft",
@@ -3241,10 +3061,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/microsoft-lists-tracker/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "productivity",
       "tags": [
         "microsoft",
@@ -3276,10 +3093,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/microsoft-loop/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "productivity",
       "tags": [
         "microsoft",
@@ -3315,10 +3129,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/plugins/outlook/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "productivity",
       "tags": [
         "microsoft",
@@ -3342,10 +3153,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/plugins/sharepoint/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "productivity",
       "tags": [
         "microsoft",
@@ -3369,10 +3177,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/plugins/teams/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "productivity",
       "tags": [
         "microsoft",
@@ -3396,10 +3201,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/notion/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "productivity",
       "tags": [
         "notion",
@@ -3443,10 +3245,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/onedrive/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "productivity",
       "tags": [
         "microsoft",
@@ -3470,16 +3269,13 @@
       "name": "onenote-knowledge-base",
       "source": "./onenote-knowledge-base",
       "description": "OneNote Knowledge Base - headless-first Graph automation for advanced page architecture, styling, and task workflows",
-      "version": "2.1.0",
+      "version": "2.0.0",
       "author": {
         "name": "Markus Ahling"
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/onenote-knowledge-base/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "productivity",
       "tags": [
         "microsoft",
@@ -3557,10 +3353,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/planner-todo/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "productivity",
       "tags": [
         "microsoft",
@@ -3600,10 +3393,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/power-automate/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "productivity",
       "tags": [
         "microsoft",
@@ -3633,10 +3423,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/power-pages/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "productivity",
       "tags": [
         "microsoft",
@@ -3666,10 +3453,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/powerapps/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "productivity",
       "tags": [
         "microsoft",
@@ -3710,10 +3494,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/servicedesk-runbooks/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "productivity",
       "tags": [
         "microsoft",
@@ -3745,10 +3526,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/sharepoint-file-intelligence/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "productivity",
       "tags": [
         "microsoft",
@@ -3782,10 +3560,7 @@
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/teams-lifecycle/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "productivity",
       "tags": [
         "microsoft",
@@ -3810,17 +3585,14 @@
     {
       "name": "ms-graph-omni",
       "source": "./ms-graph-omni",
-      "description": "Full Microsoft Graph + Entra admin + Office file ops MCP server (183 tools). Cert-based app-only auth via Azure Key Vault + delegated auth with persistent token cache — no device-code re-entry. Multi-tenant aware via MSGO_TENANTS_JSON. Covers Outlook, Teams, SharePoint, OneDrive, Planner, ToDo, OneNote, Users, Groups, Entra admin, Excel/Word/PowerPoint/Loop file ops, Search, Sites, Exchange admin, Power Platform, Intune, Defender, Power BI/Fabric, Azure Ops.",
+      "description": "Microsoft Graph + Entra + Office file ops MCP for Claude. Certificate-based app-only auth via Azure Key Vault + delegated auth with persistent token cache. Covers Outlook, Teams, SharePoint, OneDrive, Planner, ToDo, OneNote, Users, Groups, Entra admin, Excel/Word/PowerPoint/Loop file ops, Search, Sites.",
       "version": "0.2.0",
       "author": {
         "name": "Markus Ahling"
       },
       "license": "MIT",
       "homepage": "https://github.com/markus41/Claude-m/blob/main/ms-graph-omni/README.md",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/markus41/Claude-m"
-      },
+      "repository": "https://github.com/markus41/Claude-m",
       "category": "cloud",
       "tags": [
         "microsoft",
@@ -3834,7 +3606,18 @@
         "office",
         "key-vault",
         "msal",
-        "mcp"
+        "mcp",
+        "microsoft-graph",
+        "entra",
+        "azure-ad",
+        "todo",
+        "onenote",
+        "excel",
+        "word",
+        "powerpoint",
+        "loop",
+        "m365",
+        "office365"
       ],
       "keywords": [
         "microsoft-graph",

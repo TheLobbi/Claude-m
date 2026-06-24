@@ -150,7 +150,7 @@ Run `/gitops-setup` first to baseline environment, permissions, and rollout cons
 
 ## Trigger Keywords
 
-The skill activates when conversations mention: `fabric git integration`, `fabric deployment pipeline`, `fabric cicd`, `artifact promotion fabric`, `workspace branch strategy`, `release validation fabric`, `fabric rollback`, `fabric dev test prod`.
+The skill activates when conversations mention: `fabric git integration`, `fabric deployment pipeline`, `fabric cicd`, `artifact promotion fabric`, `workspace branch strategy`, `release validation fabric`, `fabric rollback`, `fabric dev test prod`, `fabric rest api`, `item definition api`, `long running operation`, `fabric throttling`, `semantic link`, `sempy`, `refresh semantic model`, `deploy semantic model`, `fabric notebook validation`.
 
 ## Author
 
