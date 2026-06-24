@@ -165,6 +165,20 @@ After producing the Proposed Fixes section, ask the user:
 
 If the user confirms, use the `Edit` tool to apply each fix in-place, or `Write` to create new files with the corrections.
 
+## Review Checklist
+
+- Verify every DAX function name, argument count, and data type is valid.
+- Verify `CALCULATE` filter arguments don't unintentionally override slicers (use `KEEPFILTERS` where needed) and that context transition inside iterators is intentional.
+- Verify `DIVIDE()` is used for safe division and `VAR`/`RETURN` removes repeated sub-expressions.
+- Verify `FILTER` on large fact tables is replaced with Boolean filters in `CALCULATE` where possible.
+- Verify time intelligence references a contiguous date table marked `dataCategory: Time`.
+- Verify Power Query M preserves query folding and sets explicit column types as the final step.
+- Verify calculation groups keep **Discourage implicit measures** on and guard arithmetic with `ISNUMERIC(SELECTEDMEASURE())`.
+- Verify DAX UDFs are typed (`type subtype mode`), described with `///`, and target compatibility level 1702+.
+- Verify TMDL/PBIP structure is valid and `lineageTag` GUIDs are present and unique.
+- Verify the star schema uses single-direction many-to-one relationships and RLS uses `USERPRINCIPALNAME()` for dynamic roles.
+- Verify REST/TOM automation handles 429/401, pagination, and never hardcodes secrets.
+
 ## How to Review
 
 1. Use `Glob` to discover relevant files (*.tmdl, *.dax, *.m, *.json, model.bim).

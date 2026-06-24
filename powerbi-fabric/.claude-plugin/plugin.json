@@ -1,7 +1,7 @@
 {
   "name": "powerbi-fabric",
-  "version": "1.0.0",
-  "description": "DAX measures, Power Query M, Power BI Embedded, deployment pipelines, PBIP scaffolding, Fabric Lakehouse, Direct Lake, performance optimization",
+  "version": "1.1.0",
+  "description": "DAX measures, DAX UDFs, calculation groups, Power Query M, TMDL model-as-code, TOM/XMLA and PowerShell automation, Power BI Embedded, deployment pipelines, PBIP scaffolding, Fabric Lakehouse, Direct Lake, performance optimization",
   "author": {
     "name": "Markus Ahling"
   },
@@ -11,7 +11,12 @@
   "keywords": [
     "power-bi",
     "dax",
+    "dax-udf",
+    "calculation-groups",
     "power-query",
+    "tmdl",
+    "tom",
+    "xmla",
     "fabric",
     "pbip",
     "analytics",
@@ -25,6 +30,8 @@
   ],
   "commands": [
     "./commands/pbi-measure.md",
+    "./commands/pbi-calc-group.md",
+    "./commands/pbi-tom.md",
     "./commands/pbi-query.md",
     "./commands/pbi-workspace-create.md",
     "./commands/pbi-dataset-refresh.md",

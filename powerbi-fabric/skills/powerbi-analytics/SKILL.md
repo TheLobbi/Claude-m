@@ -39,6 +39,24 @@ triggers:
   - veritpaq
   - direct lake fallback
   - dataflow gen2
+  - dax udf
+  - dax user-defined function
+  - user defined function
+  - calculation group
+  - calculation item
+  - selectedmeasure
+  - tmdl
+  - tabular model definition language
+  - model as code
+  - tom
+  - tabular object model
+  - xmla
+  - xmla endpoint
+  - powerbi powershell
+  - microsoftpowerbimgmt
+  - powerbi-client
+  - embed token
+  - daxlib
 ---
 
 # Power BI & Fabric Analytics
@@ -70,6 +88,26 @@ Microsoft Power BI spans Desktop (authoring DAX measures, Power Query M transfor
 - Choose the correct storage mode: Import for speed, DirectQuery for real-time, Direct Lake for Fabric.
 - Organize measures into display folders and define drill-down hierarchies on dimension tables.
 
+## DAX user-defined functions (UDFs)
+
+- Package repeated DAX logic into reusable, typed functions (`FUNCTION Name = ( p : NUMERIC ) => ...`) callable from measures, calculated columns, visual calcs, and other UDFs.
+- Author in DAX query view (`DEFINE FUNCTION`) or TMDL view (`function`); they serialize to `functions.tmdl` and require compatibility level 1702+ (GA from the June 2026 release).
+- Add optional type hints (`type subtype mode`) and `///` descriptions; reuse community packages from daxlib.
+- Consult `references/dax-udfs.md`.
+
+## Calculation groups
+
+- Collapse near-identical measure variants (time intelligence, currency, format) into calculation items that rewrite `SELECTEDMEASURE()`; require compatibility level 1500+ and **Discourage implicit measures** on.
+- Use the calculation group column on slicers/axes; set `precedence` to compose multiple groups; add dynamic format strings per item.
+- Guard arithmetic with `ISNUMERIC(SELECTEDMEASURE())` and remember measures become the variant type once any calculation group exists.
+- Consult `references/calculation-groups.md`.
+
+## Model as code (TMDL)
+
+- TMDL is the text, Git-friendly representation of the model (one file per table/role/culture, plus root files for relationships, functions, expressions, model); it maps 1:1 to TOM and backs PBIP and Fabric Git integration.
+- Edit measures, calculation items, columns, and UDFs directly in TMDL for bulk, reviewable changes; serialize/deserialize programmatically with `TmdlSerializer`.
+- Consult `references/tmdl.md`.
+
 ## Fabric
 
 - Follow the medallion pattern: Bronze (raw ingest) -> Silver (cleaned) -> Gold (star schema) -> Direct Lake semantic model.
@@ -92,6 +130,13 @@ Microsoft Power BI spans Desktop (authoring DAX measures, Power Query M transfor
 - Generate embed tokens with RLS identities when the dataset enforces row-level security.
 - Use the multi-resource `/GenerateToken` endpoint to embed multiple reports/datasets in one token.
 - Register the service principal in Azure AD and enable it in the Power BI Admin Portal tenant settings.
+
+## Programmatic model automation (TOM / XMLA / PowerShell / client JS)
+
+- Use the **Tabular Object Model (TOM)** over the **XMLA endpoint** to read/write model metadata (tables, measures, columns, RLS), create/clone models, and trigger refreshes from .NET — requires a dedicated capacity with XMLA Read or Read Write.
+- TOM and the REST API share the same Entra tokens (resource `https://analysis.windows.net/powerbi/api`); TOM owns model structure, REST owns service operations (publish, credentials, refresh schedule). TOM can start a refresh but can't set data source credentials — set those via REST first.
+- Script admin/CI with the **`MicrosoftPowerBIMgmt`** PowerShell module (`Invoke-PowerBIRestMethod` is the REST escape hatch); embed and control reports at runtime with the **`powerbi-client`** JS/TS API.
+- Consult `references/programmatic-apis.md`.
 
 ## Output Formats
 
@@ -124,6 +169,10 @@ Triggers: `onelake powerbi local`, `local data profiling powerbi`
 | Reference | Path | Content |
 |-----------|------|---------|
 | DAX Patterns | `references/dax-patterns.md` | Core functions, time intelligence, KPI patterns, best practices |
+| DAX UDFs | `references/dax-udfs.md` | User-defined functions — syntax, type hints, DQV/TMDL authoring, daxlib |
+| Calculation Groups | `references/calculation-groups.md` | Calculation items, SELECTEDMEASURE, precedence, dynamic format strings |
+| TMDL | `references/tmdl.md` | Model-as-code: folder structure, grammar, TmdlSerializer, tooling |
+| Programmatic APIs | `references/programmatic-apis.md` | TOM/XMLA (.NET), PowerShell (MicrosoftPowerBIMgmt), client JS embedding |
 | Power Query M | `references/power-query-m.md` | M language syntax, source connections, transforms, folding |
 | PBI REST API | `references/pbi-rest-api.md` | Workspace, dataset, report, import, admin, embed, and deployment pipeline endpoints |
 | PBIP Format | `references/pbip-format.md` | Project structure, TMDL, model.bim, Git workflow |

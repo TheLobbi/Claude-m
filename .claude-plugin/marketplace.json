@@ -7,9 +7,7 @@
     "name": "Markus Ahling"
   },
   "metadata": {
-    "version": "2.1.0",
-    "repository": "https://github.com/markus41/Claude-m",
-    "license": "MIT"
+    "version": "2.1.0"
   },
   "plugins": [
     {
@@ -1008,7 +1006,7 @@
       "name": "fabric-data-engineering",
       "source": "./fabric-data-engineering",
       "description": "Microsoft Fabric Data Engineering — lakehouses, Spark notebooks, data pipelines, Delta Lake tables, lakehouse SQL endpoints, multi-notebook orchestration, workspace lifecycle management, pipeline monitoring, and advanced optimization",
-      "version": "2.1.0",
+      "version": "2.0.0",
       "author": {
         "name": "Markus Ahling"
       },
@@ -1497,8 +1495,8 @@
     {
       "name": "powerbi-fabric",
       "source": "./powerbi-fabric",
-      "description": "DAX measures, Power Query M, Power BI Embedded, deployment pipelines, PBIP scaffolding, Fabric Lakehouse, Direct Lake, performance optimization",
-      "version": "1.0.0",
+      "description": "DAX measures, DAX UDFs, calculation groups, Power Query M, TMDL model-as-code, TOM/XMLA and PowerShell automation, Power BI Embedded, deployment pipelines, PBIP scaffolding, Fabric Lakehouse, Direct Lake, performance optimization",
+      "version": "1.1.0",
       "author": {
         "name": "Markus Ahling"
       },
@@ -1517,7 +1515,12 @@
         "lakehouse",
         "embedded",
         "deployment-pipeline",
-        "performance"
+        "performance",
+        "dax-udf",
+        "calculation-groups",
+        "tmdl",
+        "tom",
+        "xmla"
       ],
       "keywords": [
         "power-bi",
@@ -2139,7 +2142,7 @@
       "name": "azure-devops",
       "source": "./azure-devops",
       "description": "Comprehensive Azure DevOps expertise — Git repos with passwordless auth (GCM, WIF, SSH), YAML and Classic pipelines, deployment environments, agent pools, work items, boards, sprints, test plans, security namespaces, dashboards, wikis, service hooks, Analytics OData, CLI, and extensions",
-      "version": "2.1.0",
+      "version": "2.0.0",
       "author": {
         "name": "Markus Ahling"
       },
@@ -2359,8 +2362,8 @@
     {
       "name": "fluent-ui-design",
       "source": "./fluent-ui-design",
-      "description": "Microsoft Fluent 2 design system mastery — design tokens, color system, typography, layout, components, Teams theming, advanced UI patterns, Griffel styling, accessibility, responsive design, and Figma design kits",
-      "version": "2.1.0",
+      "description": "Microsoft Fluent 2 design system mastery — design tokens, color system, typography, layout, components, Teams theming, Griffel styling, Next.js SSR, Web Components, charting, cross-platform (iOS/Android), form orchestration, Office Add-ins, B2C UI, accessibility auditing, v8→v9 migration, and Figma design kits",
+      "version": "2.0.0",
       "author": {
         "name": "Markus Ahling"
       },
@@ -2390,7 +2393,22 @@
         "color-tokens",
         "layout",
         "adaptive-cards",
-        "copilot"
+        "copilot",
+        "nextjs",
+        "ssr",
+        "web-components",
+        "charting",
+        "ios",
+        "android",
+        "cross-platform",
+        "forms",
+        "formik",
+        "office-addins",
+        "b2c",
+        "migration",
+        "wcag",
+        "slots",
+        "aot"
       ],
       "keywords": [
         "microsoft",
@@ -3251,7 +3269,7 @@
       "name": "onenote-knowledge-base",
       "source": "./onenote-knowledge-base",
       "description": "OneNote Knowledge Base - headless-first Graph automation for advanced page architecture, styling, and task workflows",
-      "version": "2.1.0",
+      "version": "2.0.0",
       "author": {
         "name": "Markus Ahling"
       },
@@ -3567,7 +3585,7 @@
     {
       "name": "ms-graph-omni",
       "source": "./ms-graph-omni",
-      "description": "Full Microsoft Graph + Entra admin + Office file ops MCP server (183 tools). Cert-based app-only auth via Azure Key Vault + delegated auth with persistent token cache — no device-code re-entry. Multi-tenant aware via MSGO_TENANTS_JSON. Covers Outlook, Teams, SharePoint, OneDrive, Planner, ToDo, OneNote, Users, Groups, Entra admin, Excel/Word/PowerPoint/Loop file ops, Search, Sites, Exchange admin, Power Platform, Intune, Defender, Power BI/Fabric, Azure Ops.",
+      "description": "Microsoft Graph + Entra + Office file ops MCP for Claude. Certificate-based app-only auth via Azure Key Vault + delegated auth with persistent token cache. Covers Outlook, Teams, SharePoint, OneDrive, Planner, ToDo, OneNote, Users, Groups, Entra admin, Excel/Word/PowerPoint/Loop file ops, Search, Sites.",
       "version": "0.2.0",
       "author": {
         "name": "Markus Ahling"
@@ -3588,7 +3606,18 @@
         "office",
         "key-vault",
         "msal",
-        "mcp"
+        "mcp",
+        "microsoft-graph",
+        "entra",
+        "azure-ad",
+        "todo",
+        "onenote",
+        "excel",
+        "word",
+        "powerpoint",
+        "loop",
+        "m365",
+        "office365"
       ],
       "keywords": [
         "microsoft-graph",

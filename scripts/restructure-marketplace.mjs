@@ -153,8 +153,6 @@ function main() {
     owner: marketplace.owner || DEFAULT_AUTHOR,
     metadata: {
       version: MARKETPLACE_VERSION,
-      repository: REPO_URL,
-      license: DEFAULT_LICENSE,
     },
     plugins: [],
   };
