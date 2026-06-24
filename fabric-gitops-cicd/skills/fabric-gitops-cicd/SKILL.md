@@ -18,6 +18,17 @@ triggers:
   - release validation fabric
   - fabric rollback
   - fabric dev test prod
+  - fabric rest api
+  - fabric api automation
+  - item definition api
+  - update item definition
+  - long running operation
+  - fabric throttling
+  - semantic link
+  - sempy
+  - refresh semantic model
+  - deploy semantic model
+  - fabric notebook validation
 ---
 
 # Fabric GitOps CI/CD
@@ -636,3 +647,5 @@ curl -X POST \
 | Git integration — REST API, sync operations, conflict resolution, workspace setup | [`references/git-integration.md`](./references/git-integration.md) |
 | Deployment pipelines — stage management, promotion API, deployment rules, rollback | [`references/deployment-pipelines.md`](./references/deployment-pipelines.md) |
 | CI/CD patterns — Azure DevOps / GitHub Actions YAML, validation scripts, environment configs | [`references/cicd-patterns.md`](./references/cicd-patterns.md) |
+| Fabric REST API — auth, item model, item-definition (code-first ALM), long-running operations, throttling | [`references/fabric-rest-api.md`](./references/fabric-rest-api.md) |
+| Semantic Link (SemPy) — notebook-based model validation, refresh, deploy, and PR-gate conformance scans | [`references/semantic-link-sempy.md`](./references/semantic-link-sempy.md) |

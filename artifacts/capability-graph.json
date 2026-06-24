@@ -1,5 +1,6 @@
 {
   "strictPluginScope": [
+    "fabric-gitops-cicd",
     "powerbi-custom-visuals",
     "powerbi-fabric"
   ],
@@ -7860,6 +7861,426 @@
           ]
         },
         "DAX Measures": {
+          "actions": [
+            {
+              "name": "pbi-calc-group",
+              "description": "Author a calculation group (time intelligence, currency, or format switching) as TMDL, collapsing repeated measure variants into reusable calculation items.",
+              "source": "powerbi-fabric/commands/pbi-calc-group.md"
+            },
+            {
+              "name": "pbi-dashboard-create",
+              "description": "Create Power BI dashboards in Fabric with deterministic setup and verification checks.",
+              "source": "powerbi-fabric/commands/pbi-dashboard-create.md"
+            },
+            {
+              "name": "pbi-dataflow",
+              "description": "Scaffold a Fabric Dataflow Gen2 Power Query M definition for common source types with publishing guidance",
+              "source": "powerbi-fabric/commands/pbi-dataflow.md"
+            },
+            {
+              "name": "pbi-dataset-refresh",
+              "description": "Generate TypeScript code to trigger a Power BI dataset refresh and poll for completion status via the REST API.",
+              "source": "powerbi-fabric/commands/pbi-dataset-refresh.md"
+            },
+            {
+              "name": "pbi-deploy-pipeline",
+              "description": ">",
+              "source": "powerbi-fabric/commands/pbi-deploy-pipeline.md"
+            },
+            {
+              "name": "pbi-direct-lake-model",
+              "description": "Generate TMDL for a Direct Lake semantic model over a Fabric Lakehouse",
+              "source": "powerbi-fabric/commands/pbi-direct-lake-model.md"
+            },
+            {
+              "name": "pbi-embed",
+              "description": ">",
+              "source": "powerbi-fabric/commands/pbi-embed.md"
+            },
+            {
+              "name": "pbi-fabric-notebook",
+              "description": "Generate a Microsoft Fabric notebook (PySpark) for data transformation with Lakehouse integration. Outputs Python cells for reading, transforming, and writing Delta tables.",
+              "source": "powerbi-fabric/commands/pbi-fabric-notebook.md"
+            },
+            {
+              "name": "pbi-fabric-pipeline",
+              "description": "Scaffold a Fabric Data Pipeline JSON definition with Copy and Notebook activities",
+              "source": "powerbi-fabric/commands/pbi-fabric-pipeline.md"
+            },
+            {
+              "name": "pbi-measure",
+              "description": "Generate a DAX measure from a natural language description. Outputs in the standard header comment format with optional TMDL output for PBIP projects.",
+              "source": "powerbi-fabric/commands/pbi-measure.md"
+            },
+            {
+              "name": "pbi-model-validate",
+              "description": "Validate a PBIP project directory — check TMDL syntax, lineage tags, measure references, and git readiness",
+              "source": "powerbi-fabric/commands/pbi-model-validate.md"
+            },
+            {
+              "name": "pbi-query",
+              "description": "Generate Power Query M code for data transformation or source connection. Supports multiple data source types and common transformation patterns.",
+              "source": "powerbi-fabric/commands/pbi-query.md"
+            },
+            {
+              "name": "pbi-report-create",
+              "description": "Create Power BI reports in Fabric with deterministic validation and dependency checks.",
+              "source": "powerbi-fabric/commands/pbi-report-create.md"
+            },
+            {
+              "name": "pbi-rls-role",
+              "description": "Generate Row-Level Security role definition — TMDL syntax and REST API payload, with static filter and dynamic USERPRINCIPALNAME() pattern",
+              "source": "powerbi-fabric/commands/pbi-rls-role.md"
+            },
+            {
+              "name": "pbi-scaffold",
+              "description": "Generate a complete PBIP (Power BI Project) structure with tables, measures, relationships, and report layout. Outputs files ready for Git.",
+              "source": "powerbi-fabric/commands/pbi-scaffold.md"
+            },
+            {
+              "name": "pbi-scorecard-manage",
+              "description": "Manage Power BI scorecards in Fabric with deterministic governance and verification checks.",
+              "source": "powerbi-fabric/commands/pbi-scorecard-manage.md"
+            },
+            {
+              "name": "pbi-setup",
+              "description": "Set up the Power BI / Fabric plugin — configure Azure auth, verify workspace access, and optionally set up Fabric notebook environment",
+              "source": "powerbi-fabric/commands/pbi-setup.md"
+            },
+            {
+              "name": "pbi-tom",
+              "description": "Generate C#/.NET Tabular Object Model (TOM) automation over the XMLA endpoint — connect, read/modify model metadata, sweep changes, trigger refresh, or serialize to TMDL.",
+              "source": "powerbi-fabric/commands/pbi-tom.md"
+            },
+            {
+              "name": "pbi-workspace-create",
+              "description": "Generate TypeScript code to create and configure a Power BI workspace using the REST API, including user role assignments and capacity configuration.",
+              "source": "powerbi-fabric/commands/pbi-workspace-create.md"
+            }
+          ],
+          "prerequisites": [
+            "API access configured for Power BI REST operations.",
+            "Permission to create and manage reports, dashboards, and scorecards in target workspaces.",
+            "Power BI tenant with Fabric enabled and workspace access.",
+            "Use MSAL `ConfidentialClientApplication` to acquire token for `https://analysis.windows.net/powerbi/api/.default`"
+          ]
+        },
+        "DAX UDFs": {
+          "actions": [
+            {
+              "name": "pbi-calc-group",
+              "description": "Author a calculation group (time intelligence, currency, or format switching) as TMDL, collapsing repeated measure variants into reusable calculation items.",
+              "source": "powerbi-fabric/commands/pbi-calc-group.md"
+            },
+            {
+              "name": "pbi-dashboard-create",
+              "description": "Create Power BI dashboards in Fabric with deterministic setup and verification checks.",
+              "source": "powerbi-fabric/commands/pbi-dashboard-create.md"
+            },
+            {
+              "name": "pbi-dataflow",
+              "description": "Scaffold a Fabric Dataflow Gen2 Power Query M definition for common source types with publishing guidance",
+              "source": "powerbi-fabric/commands/pbi-dataflow.md"
+            },
+            {
+              "name": "pbi-dataset-refresh",
+              "description": "Generate TypeScript code to trigger a Power BI dataset refresh and poll for completion status via the REST API.",
+              "source": "powerbi-fabric/commands/pbi-dataset-refresh.md"
+            },
+            {
+              "name": "pbi-deploy-pipeline",
+              "description": ">",
+              "source": "powerbi-fabric/commands/pbi-deploy-pipeline.md"
+            },
+            {
+              "name": "pbi-direct-lake-model",
+              "description": "Generate TMDL for a Direct Lake semantic model over a Fabric Lakehouse",
+              "source": "powerbi-fabric/commands/pbi-direct-lake-model.md"
+            },
+            {
+              "name": "pbi-embed",
+              "description": ">",
+              "source": "powerbi-fabric/commands/pbi-embed.md"
+            },
+            {
+              "name": "pbi-fabric-notebook",
+              "description": "Generate a Microsoft Fabric notebook (PySpark) for data transformation with Lakehouse integration. Outputs Python cells for reading, transforming, and writing Delta tables.",
+              "source": "powerbi-fabric/commands/pbi-fabric-notebook.md"
+            },
+            {
+              "name": "pbi-fabric-pipeline",
+              "description": "Scaffold a Fabric Data Pipeline JSON definition with Copy and Notebook activities",
+              "source": "powerbi-fabric/commands/pbi-fabric-pipeline.md"
+            },
+            {
+              "name": "pbi-measure",
+              "description": "Generate a DAX measure from a natural language description. Outputs in the standard header comment format with optional TMDL output for PBIP projects.",
+              "source": "powerbi-fabric/commands/pbi-measure.md"
+            },
+            {
+              "name": "pbi-model-validate",
+              "description": "Validate a PBIP project directory — check TMDL syntax, lineage tags, measure references, and git readiness",
+              "source": "powerbi-fabric/commands/pbi-model-validate.md"
+            },
+            {
+              "name": "pbi-query",
+              "description": "Generate Power Query M code for data transformation or source connection. Supports multiple data source types and common transformation patterns.",
+              "source": "powerbi-fabric/commands/pbi-query.md"
+            },
+            {
+              "name": "pbi-report-create",
+              "description": "Create Power BI reports in Fabric with deterministic validation and dependency checks.",
+              "source": "powerbi-fabric/commands/pbi-report-create.md"
+            },
+            {
+              "name": "pbi-rls-role",
+              "description": "Generate Row-Level Security role definition — TMDL syntax and REST API payload, with static filter and dynamic USERPRINCIPALNAME() pattern",
+              "source": "powerbi-fabric/commands/pbi-rls-role.md"
+            },
+            {
+              "name": "pbi-scaffold",
+              "description": "Generate a complete PBIP (Power BI Project) structure with tables, measures, relationships, and report layout. Outputs files ready for Git.",
+              "source": "powerbi-fabric/commands/pbi-scaffold.md"
+            },
+            {
+              "name": "pbi-scorecard-manage",
+              "description": "Manage Power BI scorecards in Fabric with deterministic governance and verification checks.",
+              "source": "powerbi-fabric/commands/pbi-scorecard-manage.md"
+            },
+            {
+              "name": "pbi-setup",
+              "description": "Set up the Power BI / Fabric plugin — configure Azure auth, verify workspace access, and optionally set up Fabric notebook environment",
+              "source": "powerbi-fabric/commands/pbi-setup.md"
+            },
+            {
+              "name": "pbi-tom",
+              "description": "Generate C#/.NET Tabular Object Model (TOM) automation over the XMLA endpoint — connect, read/modify model metadata, sweep changes, trigger refresh, or serialize to TMDL.",
+              "source": "powerbi-fabric/commands/pbi-tom.md"
+            },
+            {
+              "name": "pbi-workspace-create",
+              "description": "Generate TypeScript code to create and configure a Power BI workspace using the REST API, including user role assignments and capacity configuration.",
+              "source": "powerbi-fabric/commands/pbi-workspace-create.md"
+            }
+          ],
+          "prerequisites": [
+            "API access configured for Power BI REST operations.",
+            "Permission to create and manage reports, dashboards, and scorecards in target workspaces.",
+            "Power BI tenant with Fabric enabled and workspace access.",
+            "Use MSAL `ConfidentialClientApplication` to acquire token for `https://analysis.windows.net/powerbi/api/.default`"
+          ]
+        },
+        "Calculation Groups": {
+          "actions": [
+            {
+              "name": "pbi-calc-group",
+              "description": "Author a calculation group (time intelligence, currency, or format switching) as TMDL, collapsing repeated measure variants into reusable calculation items.",
+              "source": "powerbi-fabric/commands/pbi-calc-group.md"
+            },
+            {
+              "name": "pbi-dashboard-create",
+              "description": "Create Power BI dashboards in Fabric with deterministic setup and verification checks.",
+              "source": "powerbi-fabric/commands/pbi-dashboard-create.md"
+            },
+            {
+              "name": "pbi-dataflow",
+              "description": "Scaffold a Fabric Dataflow Gen2 Power Query M definition for common source types with publishing guidance",
+              "source": "powerbi-fabric/commands/pbi-dataflow.md"
+            },
+            {
+              "name": "pbi-dataset-refresh",
+              "description": "Generate TypeScript code to trigger a Power BI dataset refresh and poll for completion status via the REST API.",
+              "source": "powerbi-fabric/commands/pbi-dataset-refresh.md"
+            },
+            {
+              "name": "pbi-deploy-pipeline",
+              "description": ">",
+              "source": "powerbi-fabric/commands/pbi-deploy-pipeline.md"
+            },
+            {
+              "name": "pbi-direct-lake-model",
+              "description": "Generate TMDL for a Direct Lake semantic model over a Fabric Lakehouse",
+              "source": "powerbi-fabric/commands/pbi-direct-lake-model.md"
+            },
+            {
+              "name": "pbi-embed",
+              "description": ">",
+              "source": "powerbi-fabric/commands/pbi-embed.md"
+            },
+            {
+              "name": "pbi-fabric-notebook",
+              "description": "Generate a Microsoft Fabric notebook (PySpark) for data transformation with Lakehouse integration. Outputs Python cells for reading, transforming, and writing Delta tables.",
+              "source": "powerbi-fabric/commands/pbi-fabric-notebook.md"
+            },
+            {
+              "name": "pbi-fabric-pipeline",
+              "description": "Scaffold a Fabric Data Pipeline JSON definition with Copy and Notebook activities",
+              "source": "powerbi-fabric/commands/pbi-fabric-pipeline.md"
+            },
+            {
+              "name": "pbi-measure",
+              "description": "Generate a DAX measure from a natural language description. Outputs in the standard header comment format with optional TMDL output for PBIP projects.",
+              "source": "powerbi-fabric/commands/pbi-measure.md"
+            },
+            {
+              "name": "pbi-model-validate",
+              "description": "Validate a PBIP project directory — check TMDL syntax, lineage tags, measure references, and git readiness",
+              "source": "powerbi-fabric/commands/pbi-model-validate.md"
+            },
+            {
+              "name": "pbi-query",
+              "description": "Generate Power Query M code for data transformation or source connection. Supports multiple data source types and common transformation patterns.",
+              "source": "powerbi-fabric/commands/pbi-query.md"
+            },
+            {
+              "name": "pbi-report-create",
+              "description": "Create Power BI reports in Fabric with deterministic validation and dependency checks.",
+              "source": "powerbi-fabric/commands/pbi-report-create.md"
+            },
+            {
+              "name": "pbi-rls-role",
+              "description": "Generate Row-Level Security role definition — TMDL syntax and REST API payload, with static filter and dynamic USERPRINCIPALNAME() pattern",
+              "source": "powerbi-fabric/commands/pbi-rls-role.md"
+            },
+            {
+              "name": "pbi-scaffold",
+              "description": "Generate a complete PBIP (Power BI Project) structure with tables, measures, relationships, and report layout. Outputs files ready for Git.",
+              "source": "powerbi-fabric/commands/pbi-scaffold.md"
+            },
+            {
+              "name": "pbi-scorecard-manage",
+              "description": "Manage Power BI scorecards in Fabric with deterministic governance and verification checks.",
+              "source": "powerbi-fabric/commands/pbi-scorecard-manage.md"
+            },
+            {
+              "name": "pbi-setup",
+              "description": "Set up the Power BI / Fabric plugin — configure Azure auth, verify workspace access, and optionally set up Fabric notebook environment",
+              "source": "powerbi-fabric/commands/pbi-setup.md"
+            },
+            {
+              "name": "pbi-tom",
+              "description": "Generate C#/.NET Tabular Object Model (TOM) automation over the XMLA endpoint — connect, read/modify model metadata, sweep changes, trigger refresh, or serialize to TMDL.",
+              "source": "powerbi-fabric/commands/pbi-tom.md"
+            },
+            {
+              "name": "pbi-workspace-create",
+              "description": "Generate TypeScript code to create and configure a Power BI workspace using the REST API, including user role assignments and capacity configuration.",
+              "source": "powerbi-fabric/commands/pbi-workspace-create.md"
+            }
+          ],
+          "prerequisites": [
+            "API access configured for Power BI REST operations.",
+            "Permission to create and manage reports, dashboards, and scorecards in target workspaces.",
+            "Power BI tenant with Fabric enabled and workspace access.",
+            "Use MSAL `ConfidentialClientApplication` to acquire token for `https://analysis.windows.net/powerbi/api/.default`"
+          ]
+        },
+        "TMDL": {
+          "actions": [
+            {
+              "name": "pbi-calc-group",
+              "description": "Author a calculation group (time intelligence, currency, or format switching) as TMDL, collapsing repeated measure variants into reusable calculation items.",
+              "source": "powerbi-fabric/commands/pbi-calc-group.md"
+            },
+            {
+              "name": "pbi-dashboard-create",
+              "description": "Create Power BI dashboards in Fabric with deterministic setup and verification checks.",
+              "source": "powerbi-fabric/commands/pbi-dashboard-create.md"
+            },
+            {
+              "name": "pbi-dataflow",
+              "description": "Scaffold a Fabric Dataflow Gen2 Power Query M definition for common source types with publishing guidance",
+              "source": "powerbi-fabric/commands/pbi-dataflow.md"
+            },
+            {
+              "name": "pbi-dataset-refresh",
+              "description": "Generate TypeScript code to trigger a Power BI dataset refresh and poll for completion status via the REST API.",
+              "source": "powerbi-fabric/commands/pbi-dataset-refresh.md"
+            },
+            {
+              "name": "pbi-deploy-pipeline",
+              "description": ">",
+              "source": "powerbi-fabric/commands/pbi-deploy-pipeline.md"
+            },
+            {
+              "name": "pbi-direct-lake-model",
+              "description": "Generate TMDL for a Direct Lake semantic model over a Fabric Lakehouse",
+              "source": "powerbi-fabric/commands/pbi-direct-lake-model.md"
+            },
+            {
+              "name": "pbi-embed",
+              "description": ">",
+              "source": "powerbi-fabric/commands/pbi-embed.md"
+            },
+            {
+              "name": "pbi-fabric-notebook",
+              "description": "Generate a Microsoft Fabric notebook (PySpark) for data transformation with Lakehouse integration. Outputs Python cells for reading, transforming, and writing Delta tables.",
+              "source": "powerbi-fabric/commands/pbi-fabric-notebook.md"
+            },
+            {
+              "name": "pbi-fabric-pipeline",
+              "description": "Scaffold a Fabric Data Pipeline JSON definition with Copy and Notebook activities",
+              "source": "powerbi-fabric/commands/pbi-fabric-pipeline.md"
+            },
+            {
+              "name": "pbi-measure",
+              "description": "Generate a DAX measure from a natural language description. Outputs in the standard header comment format with optional TMDL output for PBIP projects.",
+              "source": "powerbi-fabric/commands/pbi-measure.md"
+            },
+            {
+              "name": "pbi-model-validate",
+              "description": "Validate a PBIP project directory — check TMDL syntax, lineage tags, measure references, and git readiness",
+              "source": "powerbi-fabric/commands/pbi-model-validate.md"
+            },
+            {
+              "name": "pbi-query",
+              "description": "Generate Power Query M code for data transformation or source connection. Supports multiple data source types and common transformation patterns.",
+              "source": "powerbi-fabric/commands/pbi-query.md"
+            },
+            {
+              "name": "pbi-report-create",
+              "description": "Create Power BI reports in Fabric with deterministic validation and dependency checks.",
+              "source": "powerbi-fabric/commands/pbi-report-create.md"
+            },
+            {
+              "name": "pbi-rls-role",
+              "description": "Generate Row-Level Security role definition — TMDL syntax and REST API payload, with static filter and dynamic USERPRINCIPALNAME() pattern",
+              "source": "powerbi-fabric/commands/pbi-rls-role.md"
+            },
+            {
+              "name": "pbi-scaffold",
+              "description": "Generate a complete PBIP (Power BI Project) structure with tables, measures, relationships, and report layout. Outputs files ready for Git.",
+              "source": "powerbi-fabric/commands/pbi-scaffold.md"
+            },
+            {
+              "name": "pbi-scorecard-manage",
+              "description": "Manage Power BI scorecards in Fabric with deterministic governance and verification checks.",
+              "source": "powerbi-fabric/commands/pbi-scorecard-manage.md"
+            },
+            {
+              "name": "pbi-setup",
+              "description": "Set up the Power BI / Fabric plugin — configure Azure auth, verify workspace access, and optionally set up Fabric notebook environment",
+              "source": "powerbi-fabric/commands/pbi-setup.md"
+            },
+            {
+              "name": "pbi-tom",
+              "description": "Generate C#/.NET Tabular Object Model (TOM) automation over the XMLA endpoint — connect, read/modify model metadata, sweep changes, trigger refresh, or serialize to TMDL.",
+              "source": "powerbi-fabric/commands/pbi-tom.md"
+            },
+            {
+              "name": "pbi-workspace-create",
+              "description": "Generate TypeScript code to create and configure a Power BI workspace using the REST API, including user role assignments and capacity configuration.",
+              "source": "powerbi-fabric/commands/pbi-workspace-create.md"
+            }
+          ],
+          "prerequisites": [
+            "API access configured for Power BI REST operations.",
+            "Permission to create and manage reports, dashboards, and scorecards in target workspaces.",
+            "Power BI tenant with Fabric enabled and workspace access.",
+            "Use MSAL `ConfidentialClientApplication` to acquire token for `https://analysis.windows.net/powerbi/api/.default`"
+          ]
+        },
+        "TOM / XMLA / PowerShell": {
           "actions": [
             {
               "name": "pbi-calc-group",
