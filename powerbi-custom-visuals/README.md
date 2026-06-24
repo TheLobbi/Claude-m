@@ -125,6 +125,7 @@ Comprehensive knowledge plugin for **building custom Power BI visuals** — from
 
 | Area | What Claude Can Do |
 |------|-------------------|
+| Choose an approach | Recommend SDK vs Deneb (Vega/Vega-Lite) vs SVG-via-DAX vs HTML Content vs Charticulator |
 | Environment | Install/verify Node + `pbiviz`, trust the dev cert, enable developer mode |
 | Scaffolding | `pbiviz new`, tailor the project to a categorical/table/matrix/single mapping |
 | Capabilities | Author `capabilities.json` — data roles, dataView mappings, conditions, objects, privileges, feature flags |
@@ -168,6 +169,7 @@ powerbi-custom-visuals/
 ├── skills/powerbi-custom-visuals/
 │   ├── SKILL.md
 │   ├── references/
+│   │   ├── building-approaches.md
 │   │   ├── environment-setup.md
 │   │   ├── project-structure.md
 │   │   ├── capabilities.md

@@ -1,5 +1,7 @@
 {
-  "strictPluginScope": [],
+  "strictPluginScope": [
+    "powerbi-custom-visuals"
+  ],
   "sourceFiles": {
     "claudeCatalog": "CLAUDE.md",
     "marketplace": ".claude-plugin/marketplace.json"

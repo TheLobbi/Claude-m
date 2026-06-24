@@ -1,7 +1,7 @@
 ---
 name: pbiviz-scaffold
 description: Scaffold a new Power BI custom visual project with pbiviz and wire it up for the modern format pane, a chosen data mapping, and a starter render.
-argument-hint: "<visual name> [--mapping categorical|table|matrix|single] [--lib d3|none] [--api 5.11.0]"
+argument-hint: "<visual name> [--mapping categorical|table|matrix|single] [--lib d3|react|none] [--api 5.11.0]"
 allowed-tools:
   - Read
   - Write
@@ -17,12 +17,16 @@ Create a buildable visual project and tailor it to the user's intended chart.
 
 References: `${CLAUDE_PLUGIN_ROOT}/skills/powerbi-custom-visuals/references/project-structure.md` and the examples under `${CLAUDE_PLUGIN_ROOT}/skills/powerbi-custom-visuals/examples/`.
 
+## Step 0: Confirm the SDK is the right tool
+
+A full `.pbiviz` is not always the fastest path. If the user just needs inline sparklines/KPIs, a declarative chart, or no-code, point them at the lighter options first (`${CLAUDE_PLUGIN_ROOT}/skills/powerbi-custom-visuals/references/building-approaches.md`): SVG-via-DAX, Deneb (Vega/Vega-Lite), HTML Content, or Charticulator. Proceed with scaffolding when they need lifecycle control, a custom format pane, advanced interactivity, or AppSource distribution.
+
 ## Step 1: Determine intent
 
 Parse the name and flags. Establish:
 - Visual display name and internal name.
 - Data mapping — `--mapping` or infer (charts → `categorical`, grids → `table`, hierarchies → `matrix`, KPI → `single`).
-- Rendering library — `--lib` (default `d3`).
+- Rendering library — `--lib` (`d3` default, `react` for a React + TypeScript visual, or `none`).
 - API version — `--api` (default a 5.1+ value for the modern format pane).
 
 ## Step 2: Generate the project

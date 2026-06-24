@@ -91,6 +91,16 @@ triggers:
   - sample bar chart visual
   - circle card visual
   - pbiviz file
+  - react power bi visual
+  - deneb
+  - vega visual
+  - vega-lite
+  - svg dax measure
+  - svg in power bi
+  - html content visual
+  - charticulator
+  - daxlib svg
+  - low-code custom visual
 ---
 
 # Power BI Custom Visuals Development
@@ -105,6 +115,10 @@ Custom Power BI visuals are web components — written in TypeScript, rendered w
 - A **Power BI Pro** or **Premium Per User (PPU)** account to test in the service, plus an IDE (VS Code recommended).
 - **Developer mode** enabled — in Power BI Desktop (*File ▸ Options ▸ Report settings ▸ Develop a visual*, per session) or in the service (*Developer settings ▸ Power BI Developer mode*). See `${CLAUDE_PLUGIN_ROOT}/skills/powerbi-custom-visuals/references/environment-setup.md`.
 - For certification: a **Partner Center** account and a public/reviewable **GitHub** repository.
+
+## Choosing how to build
+
+The `pbiviz` SDK is the most powerful path, but not always the right one. Pick the lightest approach that meets the need: **SVG rendered from a DAX measure** (inline sparklines/KPIs in tables, no visual to build), **Deneb** (declarative Vega/Vega-Lite, certified), the **HTML Content** visual, **Charticulator** (no-code), or the full **pbiviz SDK** (TypeScript + D3/React) when you need lifecycle control, a custom format pane, advanced interactivity, or AppSource distribution. The full decision guide and low-code patterns are in `${CLAUDE_PLUGIN_ROOT}/skills/powerbi-custom-visuals/references/building-approaches.md`. The rest of this skill covers the SDK path in depth.
 
 ## The visual lifecycle at a glance
 
@@ -218,6 +232,7 @@ Microsoft ships helper packages so you don't reinvent common chart plumbing: `po
 
 | File | Path | Content |
 |------|------|---------|
+| Building approaches | `${CLAUDE_PLUGIN_ROOT}/skills/powerbi-custom-visuals/references/building-approaches.md` | Choosing SDK vs Deneb vs SVG-via-DAX vs HTML Content vs Charticulator; React + pbiviz MCP |
 | Environment setup | `${CLAUDE_PLUGIN_ROOT}/skills/powerbi-custom-visuals/references/environment-setup.md` | Node, pbiviz install, dev mode, account/SSL setup |
 | Project structure | `${CLAUDE_PLUGIN_ROOT}/skills/powerbi-custom-visuals/references/project-structure.md` | Folder layout, `pbiviz.json`, `tsconfig`, `package.json` |
 | Capabilities | `${CLAUDE_PLUGIN_ROOT}/skills/powerbi-custom-visuals/references/capabilities.md` | privileges, dataRoles, mappings, objects, feature flags |
