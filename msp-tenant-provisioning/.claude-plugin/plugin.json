@@ -7,10 +7,7 @@
   },
   "license": "MIT",
   "homepage": "https://github.com/markus41/Claude-m/blob/main/msp-tenant-provisioning/README.md",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/markus41/Claude-m"
-  },
+  "repository": "https://github.com/markus41/Claude-m",
   "keywords": [
     "microsoft",
     "azure",

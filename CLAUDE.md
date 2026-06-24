@@ -95,6 +95,7 @@ Then re-run `/plugin marketplace add markus41/Claude-m`.
 | `dataverse-schema` | cloud | Dataverse table, column, and relationship management via Web API — schema design, data seeding, and solution lifecycle |
 | `powerbi-fabric` | analytics | DAX measures, Power Query M, Power BI Embedded, deployment pipelines, PBIP scaffolding, Fabric Lakehouse, Direct Lake, performance optimization |
 | `powerbi-paginated-reports` | analytics | Power BI paginated reports through Fabric — RDL authoring, VB.NET expressions, data source configuration, rendering/export, REST API automation, SSRS-to-Fabric migration, performance tuning, and troubleshooting |
+| `powerbi-custom-visuals` | analytics | Build, debug, package, and certify custom Power BI visuals with the pbiviz toolchain — project scaffolding, capabilities and dataView mapping, the IVisual API, the modern format pane and formatting model, selection and cross-filtering, tooltips, unit testing, and AppSource certification |
 | `powerplatform-alm` | devops | Power Platform ALM — environments, solution transport, CI/CD pipelines, PCF controls, and deployment automation |
 | `onedrive` | productivity | OneDrive file management via Microsoft Graph — upload, download, share, search, and manage files and folders |
 | `planner-todo` | productivity | Microsoft Planner and To Do task management via Graph API — classic plans, Premium Dataverse projects, buckets, tasks, assignments, checklists, nested plans, roster plans, sprints, goals, and Business Scenarios |
@@ -184,6 +185,7 @@ Then re-run `/plugin marketplace add markus41/Claude-m`.
 | `fluent-ui-design` | devops | Microsoft Fluent 2 design system mastery — design tokens, color system, typography, layout, components, Teams theming, advanced UI patterns, Griffel styling, accessibility, responsive design, and Figma design kits |
 | `notion` | productivity | Comprehensive Notion mastery — page design and styling, every block type, databases and formulas, AI features, MCP integration, REST API automation, and professional page templates |
 | `graph-investigator` | security | Microsoft Graph Investigator — unified user investigation, mailbox forensics, activity timelines, device correlation, and forensic reporting across all M365 services |
+| `ms-graph-omni` | cloud | Full Microsoft Graph + Entra admin + Office file ops MCP server (183 tools). Cert-based app-only auth via Azure Key Vault + delegated auth with persistent token cache — no device-code re-entry. Multi-tenant aware via MSGO_TENANTS_JSON. Covers Outlook, Teams, SharePoint, OneDrive, Planner, ToDo, OneNote, Users, Groups, Entra admin, Excel/Word/PowerPoint/Loop file ops, Search, Sites, Exchange admin, Power Platform, Intune, Defender, Power BI/Fabric, Azure Ops. |
 
 Install any plugin with:
 ```bash

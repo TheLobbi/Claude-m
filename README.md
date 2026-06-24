@@ -331,6 +331,7 @@ flowchart TD
 | [`fabric-semantic-models`](fabric-semantic-models/README.md) | Microsoft Fabric Semantic Models — Direct Lake modeling, DAX governance, calculation groups, XMLA deployment, and semantic link automation | `fabric-semantic-models` |
 | [`powerbi-fabric`](powerbi-fabric/README.md) | DAX measures, Power Query M, Power BI Embedded, deployment pipelines, PBIP scaffolding, Fabric Lakehouse, Direct Lake, performance optimization | `powerbi-fabric` |
 | [`powerbi-paginated-reports`](powerbi-paginated-reports/README.md) | Power BI paginated reports through Fabric — RDL authoring, VB.NET expressions, data source configuration, rendering/export, REST API automation, SSRS-to-Fabric migration, performance tuning, and troubleshooting | `powerbi-paginated-reports` |
+| [`powerbi-custom-visuals`](powerbi-custom-visuals/README.md) | Build, debug, package, and certify custom Power BI visuals with the pbiviz toolchain — project scaffolding, capabilities and dataView mapping, the IVisual API, the modern format pane and formatting model, selection and cross-filtering, tooltips, unit testing, and AppSource certification | `powerbi-custom-visuals` |
 | [`process-task-mining`](process-task-mining/README.md) | Process and task mining from M365, Power Automate, and Azure Monitor logs — extract event logs, discover process models, analyze performance, and check conformance | `process-task-mining` |
 
 </details>

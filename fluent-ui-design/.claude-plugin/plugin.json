@@ -7,10 +7,7 @@
   },
   "license": "MIT",
   "homepage": "https://github.com/markus41/Claude-m/blob/main/fluent-ui-design/README.md",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/markus41/Claude-m"
-  },
+  "repository": "https://github.com/markus41/Claude-m",
   "keywords": [
     "microsoft",
     "fluent",
@@ -48,15 +45,15 @@
     "aot"
   ],
   "skills": [
-    "./skills/fluent-design-system/SKILL.md",
-    "./skills/fluent-nextjs/SKILL.md",
-    "./skills/fluent-griffel/SKILL.md",
-    "./skills/fluent-extensibility/SKILL.md",
-    "./skills/fluent-web-components/SKILL.md",
-    "./skills/fluent-charting/SKILL.md",
-    "./skills/fluent-cross-platform/SKILL.md",
-    "./skills/fluent-forms/SKILL.md",
-    "./skills/fluent-integration/SKILL.md"
+    "./skills/fluent-design-system/",
+    "./skills/fluent-nextjs/",
+    "./skills/fluent-griffel/",
+    "./skills/fluent-extensibility/",
+    "./skills/fluent-web-components/",
+    "./skills/fluent-charting/",
+    "./skills/fluent-cross-platform/",
+    "./skills/fluent-forms/",
+    "./skills/fluent-integration/"
   ],
   "commands": [
     "./commands/fluent-setup.md",

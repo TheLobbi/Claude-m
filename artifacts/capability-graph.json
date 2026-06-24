@@ -1,7 +1,5 @@
 {
-  "strictPluginScope": [
-    "agent-foundry"
-  ],
+  "strictPluginScope": [],
   "sourceFiles": {
     "claudeCatalog": "CLAUDE.md",
     "marketplace": ".claude-plugin/marketplace.json"
@@ -8957,6 +8955,245 @@
             ".NET Framework 4.7.2+ installed",
             "Internet connectivity to Fabric/Power BI service",
             "Windows OS (Report Builder is Windows-only)"
+          ]
+        }
+      }
+    },
+    "powerbi-custom-visuals": {
+      "category": "analytics",
+      "description": "Build, debug, package, and certify custom Power BI visuals with the pbiviz toolchain — project scaffolding, capabilities and dataView mapping, the IVisual API, the modern format pane and formatting model, selection and cross-filtering, tooltips, unit testing, and AppSource certification",
+      "files": {
+        "manifest": "powerbi-custom-visuals/.claude-plugin/plugin.json",
+        "readme": "powerbi-custom-visuals/README.md",
+        "skills": [
+          "powerbi-custom-visuals/skills/powerbi-custom-visuals/SKILL.md"
+        ],
+        "commands": [
+          "powerbi-custom-visuals/commands/pbiviz-capabilities.md",
+          "powerbi-custom-visuals/commands/pbiviz-certify.md",
+          "powerbi-custom-visuals/commands/pbiviz-dataview.md",
+          "powerbi-custom-visuals/commands/pbiviz-debug.md",
+          "powerbi-custom-visuals/commands/pbiviz-format-pane.md",
+          "powerbi-custom-visuals/commands/pbiviz-interactivity.md",
+          "powerbi-custom-visuals/commands/pbiviz-migrate.md",
+          "powerbi-custom-visuals/commands/pbiviz-package.md",
+          "powerbi-custom-visuals/commands/pbiviz-scaffold.md",
+          "powerbi-custom-visuals/commands/pbiviz-setup.md"
+        ],
+        "agents": [
+          "powerbi-custom-visuals/agents/visual-performance-advisor.md",
+          "powerbi-custom-visuals/agents/visual-reviewer.md"
+        ]
+      },
+      "domains": {
+        "Commands": {
+          "actions": [
+            {
+              "name": "pbiviz-capabilities",
+              "description": "Author or edit capabilities.json — data roles, dataView mappings, conditions, Format-pane objects, privileges, and feature flags — keeping it consistent with the visual code.",
+              "source": "powerbi-custom-visuals/commands/pbiviz-capabilities.md"
+            },
+            {
+              "name": "pbiviz-certify",
+              "description": "Audit a custom visual against Power BI certification requirements and prepare the AppSource / Partner Center submission, with a pass/fail readiness report.",
+              "source": "powerbi-custom-visuals/commands/pbiviz-certify.md"
+            },
+            {
+              "name": "pbiviz-dataview",
+              "description": "Design a dataView mapping and generate the matching DataView-parsing code in visual.ts for categorical, table, matrix, or single mappings.",
+              "source": "powerbi-custom-visuals/commands/pbiviz-dataview.md"
+            },
+            {
+              "name": "pbiviz-debug",
+              "description": "Run the pbiviz dev server and diagnose a custom visual — blank Developer Visual, empty dataView, format-pane errors, console exceptions, and cert issues.",
+              "source": "powerbi-custom-visuals/commands/pbiviz-debug.md"
+            },
+            {
+              "name": "pbiviz-format-pane",
+              "description": "Build or extend the modern Format pane (API 5.1+) — formatting model cards, groups, and slices via formatting model utils, with matching capabilities objects.",
+              "source": "powerbi-custom-visuals/commands/pbiviz-format-pane.md"
+            },
+            {
+              "name": "pbiviz-interactivity",
+              "description": "Add interactivity to a custom visual — selection and cross-filtering, highlighting, tooltips, context menu, drill-down, bookmarks, landing page, or launchUrl.",
+              "source": "powerbi-custom-visuals/commands/pbiviz-interactivity.md"
+            },
+            {
+              "name": "pbiviz-migrate",
+              "description": "Migrate a custom visual to a newer API version and convert the legacy enumerateObjectInstances settings to the modern getFormattingModel format pane.",
+              "source": "powerbi-custom-visuals/commands/pbiviz-migrate.md"
+            },
+            {
+              "name": "pbiviz-package",
+              "description": "Build a distributable .pbiviz — fill required pbiviz.json metadata, bump the four-part version, set the icon, then run pbiviz package and verify the output.",
+              "source": "powerbi-custom-visuals/commands/pbiviz-package.md"
+            },
+            {
+              "name": "pbiviz-scaffold",
+              "description": "Scaffold a new Power BI custom visual project with pbiviz and wire it up for the modern format pane, a chosen data mapping, and a starter render.",
+              "source": "powerbi-custom-visuals/commands/pbiviz-scaffold.md"
+            },
+            {
+              "name": "pbiviz-setup",
+              "description": "Set up a machine for Power BI custom visual development — install Node.js and the pbiviz tool, trust the dev certificate, and enable developer mode.",
+              "source": "powerbi-custom-visuals/commands/pbiviz-setup.md"
+            }
+          ],
+          "prerequisites": [
+            "**Developer mode** enabled — in Power BI Desktop (*File ▸ Options ▸ Report settings ▸ Develop a visual*, per session) or in the service (*Developer settings ▸ Power BI Developer mode*). See `${CLAUDE_PLUGIN_ROOT}/skills/powerbi-custom-visuals/references/environment-setup.md`.",
+            "**Node.js** (current LTS) + **npm**, and the toolchain: `npm i -g powerbi-visuals-tools@latest` (provides `pbiviz`).",
+            "**Node.js** (current LTS) and **npm**. Install the toolchain globally: `npm i -g powerbi-visuals-tools@latest` (provides the `pbiviz` command).",
+            "A **Power BI Pro** or **Premium Per User (PPU)** account to sideload and test, plus **developer mode** enabled in Power BI Desktop or the service.",
+            "A **Power BI Pro** or **Premium Per User (PPU)** account to test in the service, plus an IDE (VS Code recommended).",
+            "An IDE (VS Code recommended). For certification: a **Partner Center** account and a reviewable **GitHub** repo.",
+            "For certification: a **Partner Center** account and a public/reviewable **GitHub** repository.",
+            "No MCP server or cloud credentials required — this is a pure knowledge + local-CLI plugin. Run `/pbiviz-setup` to verify everything.",
+            "Not an R-visual; uses a recent `apiVersion` and `powerbi-visuals-tools`.",
+            "Rendering Events API (`renderingStarted`/`renderingFinished`/`renderingFailed`) is used.",
+            "Required files present: `capabilities.json`, `pbiviz.json`, `package.json`, `package-lock.json`, `tsconfig.json`.",
+            "`.gitignore` excludes `node_modules`, `.tmp`, `dist`.",
+            "`package.json` has `typescript`, `eslint`, `eslint-plugin-powerbi-visuals`, and the lint command `npx eslint . --ext .js,.jsx,.ts,.tsx`.",
+            "`privileges` contains no `WebAccess` (no external access)."
+          ]
+        },
+        "Agents": {
+          "actions": [
+            {
+              "name": "pbiviz-capabilities",
+              "description": "Author or edit capabilities.json — data roles, dataView mappings, conditions, Format-pane objects, privileges, and feature flags — keeping it consistent with the visual code.",
+              "source": "powerbi-custom-visuals/commands/pbiviz-capabilities.md"
+            },
+            {
+              "name": "pbiviz-certify",
+              "description": "Audit a custom visual against Power BI certification requirements and prepare the AppSource / Partner Center submission, with a pass/fail readiness report.",
+              "source": "powerbi-custom-visuals/commands/pbiviz-certify.md"
+            },
+            {
+              "name": "pbiviz-dataview",
+              "description": "Design a dataView mapping and generate the matching DataView-parsing code in visual.ts for categorical, table, matrix, or single mappings.",
+              "source": "powerbi-custom-visuals/commands/pbiviz-dataview.md"
+            },
+            {
+              "name": "pbiviz-debug",
+              "description": "Run the pbiviz dev server and diagnose a custom visual — blank Developer Visual, empty dataView, format-pane errors, console exceptions, and cert issues.",
+              "source": "powerbi-custom-visuals/commands/pbiviz-debug.md"
+            },
+            {
+              "name": "pbiviz-format-pane",
+              "description": "Build or extend the modern Format pane (API 5.1+) — formatting model cards, groups, and slices via formatting model utils, with matching capabilities objects.",
+              "source": "powerbi-custom-visuals/commands/pbiviz-format-pane.md"
+            },
+            {
+              "name": "pbiviz-interactivity",
+              "description": "Add interactivity to a custom visual — selection and cross-filtering, highlighting, tooltips, context menu, drill-down, bookmarks, landing page, or launchUrl.",
+              "source": "powerbi-custom-visuals/commands/pbiviz-interactivity.md"
+            },
+            {
+              "name": "pbiviz-migrate",
+              "description": "Migrate a custom visual to a newer API version and convert the legacy enumerateObjectInstances settings to the modern getFormattingModel format pane.",
+              "source": "powerbi-custom-visuals/commands/pbiviz-migrate.md"
+            },
+            {
+              "name": "pbiviz-package",
+              "description": "Build a distributable .pbiviz — fill required pbiviz.json metadata, bump the four-part version, set the icon, then run pbiviz package and verify the output.",
+              "source": "powerbi-custom-visuals/commands/pbiviz-package.md"
+            },
+            {
+              "name": "pbiviz-scaffold",
+              "description": "Scaffold a new Power BI custom visual project with pbiviz and wire it up for the modern format pane, a chosen data mapping, and a starter render.",
+              "source": "powerbi-custom-visuals/commands/pbiviz-scaffold.md"
+            },
+            {
+              "name": "pbiviz-setup",
+              "description": "Set up a machine for Power BI custom visual development — install Node.js and the pbiviz tool, trust the dev certificate, and enable developer mode.",
+              "source": "powerbi-custom-visuals/commands/pbiviz-setup.md"
+            }
+          ],
+          "prerequisites": [
+            "**Developer mode** enabled — in Power BI Desktop (*File ▸ Options ▸ Report settings ▸ Develop a visual*, per session) or in the service (*Developer settings ▸ Power BI Developer mode*). See `${CLAUDE_PLUGIN_ROOT}/skills/powerbi-custom-visuals/references/environment-setup.md`.",
+            "**Node.js** (current LTS) + **npm**, and the toolchain: `npm i -g powerbi-visuals-tools@latest` (provides `pbiviz`).",
+            "**Node.js** (current LTS) and **npm**. Install the toolchain globally: `npm i -g powerbi-visuals-tools@latest` (provides the `pbiviz` command).",
+            "A **Power BI Pro** or **Premium Per User (PPU)** account to sideload and test, plus **developer mode** enabled in Power BI Desktop or the service.",
+            "A **Power BI Pro** or **Premium Per User (PPU)** account to test in the service, plus an IDE (VS Code recommended).",
+            "An IDE (VS Code recommended). For certification: a **Partner Center** account and a reviewable **GitHub** repo.",
+            "For certification: a **Partner Center** account and a public/reviewable **GitHub** repository.",
+            "No MCP server or cloud credentials required — this is a pure knowledge + local-CLI plugin. Run `/pbiviz-setup` to verify everything.",
+            "Not an R-visual; uses a recent `apiVersion` and `powerbi-visuals-tools`.",
+            "Rendering Events API (`renderingStarted`/`renderingFinished`/`renderingFailed`) is used.",
+            "Required files present: `capabilities.json`, `pbiviz.json`, `package.json`, `package-lock.json`, `tsconfig.json`.",
+            "`.gitignore` excludes `node_modules`, `.tmp`, `dist`.",
+            "`package.json` has `typescript`, `eslint`, `eslint-plugin-powerbi-visuals`, and the lint command `npx eslint . --ext .js,.jsx,.ts,.tsx`.",
+            "`privileges` contains no `WebAccess` (no external access)."
+          ]
+        },
+        "Skills": {
+          "actions": [
+            {
+              "name": "pbiviz-capabilities",
+              "description": "Author or edit capabilities.json — data roles, dataView mappings, conditions, Format-pane objects, privileges, and feature flags — keeping it consistent with the visual code.",
+              "source": "powerbi-custom-visuals/commands/pbiviz-capabilities.md"
+            },
+            {
+              "name": "pbiviz-certify",
+              "description": "Audit a custom visual against Power BI certification requirements and prepare the AppSource / Partner Center submission, with a pass/fail readiness report.",
+              "source": "powerbi-custom-visuals/commands/pbiviz-certify.md"
+            },
+            {
+              "name": "pbiviz-dataview",
+              "description": "Design a dataView mapping and generate the matching DataView-parsing code in visual.ts for categorical, table, matrix, or single mappings.",
+              "source": "powerbi-custom-visuals/commands/pbiviz-dataview.md"
+            },
+            {
+              "name": "pbiviz-debug",
+              "description": "Run the pbiviz dev server and diagnose a custom visual — blank Developer Visual, empty dataView, format-pane errors, console exceptions, and cert issues.",
+              "source": "powerbi-custom-visuals/commands/pbiviz-debug.md"
+            },
+            {
+              "name": "pbiviz-format-pane",
+              "description": "Build or extend the modern Format pane (API 5.1+) — formatting model cards, groups, and slices via formatting model utils, with matching capabilities objects.",
+              "source": "powerbi-custom-visuals/commands/pbiviz-format-pane.md"
+            },
+            {
+              "name": "pbiviz-interactivity",
+              "description": "Add interactivity to a custom visual — selection and cross-filtering, highlighting, tooltips, context menu, drill-down, bookmarks, landing page, or launchUrl.",
+              "source": "powerbi-custom-visuals/commands/pbiviz-interactivity.md"
+            },
+            {
+              "name": "pbiviz-migrate",
+              "description": "Migrate a custom visual to a newer API version and convert the legacy enumerateObjectInstances settings to the modern getFormattingModel format pane.",
+              "source": "powerbi-custom-visuals/commands/pbiviz-migrate.md"
+            },
+            {
+              "name": "pbiviz-package",
+              "description": "Build a distributable .pbiviz — fill required pbiviz.json metadata, bump the four-part version, set the icon, then run pbiviz package and verify the output.",
+              "source": "powerbi-custom-visuals/commands/pbiviz-package.md"
+            },
+            {
+              "name": "pbiviz-scaffold",
+              "description": "Scaffold a new Power BI custom visual project with pbiviz and wire it up for the modern format pane, a chosen data mapping, and a starter render.",
+              "source": "powerbi-custom-visuals/commands/pbiviz-scaffold.md"
+            },
+            {
+              "name": "pbiviz-setup",
+              "description": "Set up a machine for Power BI custom visual development — install Node.js and the pbiviz tool, trust the dev certificate, and enable developer mode.",
+              "source": "powerbi-custom-visuals/commands/pbiviz-setup.md"
+            }
+          ],
+          "prerequisites": [
+            "**Developer mode** enabled — in Power BI Desktop (*File ▸ Options ▸ Report settings ▸ Develop a visual*, per session) or in the service (*Developer settings ▸ Power BI Developer mode*). See `${CLAUDE_PLUGIN_ROOT}/skills/powerbi-custom-visuals/references/environment-setup.md`.",
+            "**Node.js** (current LTS) + **npm**, and the toolchain: `npm i -g powerbi-visuals-tools@latest` (provides `pbiviz`).",
+            "**Node.js** (current LTS) and **npm**. Install the toolchain globally: `npm i -g powerbi-visuals-tools@latest` (provides the `pbiviz` command).",
+            "A **Power BI Pro** or **Premium Per User (PPU)** account to sideload and test, plus **developer mode** enabled in Power BI Desktop or the service.",
+            "A **Power BI Pro** or **Premium Per User (PPU)** account to test in the service, plus an IDE (VS Code recommended).",
+            "An IDE (VS Code recommended). For certification: a **Partner Center** account and a reviewable **GitHub** repo.",
+            "For certification: a **Partner Center** account and a public/reviewable **GitHub** repository.",
+            "No MCP server or cloud credentials required — this is a pure knowledge + local-CLI plugin. Run `/pbiviz-setup` to verify everything.",
+            "Not an R-visual; uses a recent `apiVersion` and `powerbi-visuals-tools`.",
+            "Rendering Events API (`renderingStarted`/`renderingFinished`/`renderingFailed`) is used.",
+            "Required files present: `capabilities.json`, `pbiviz.json`, `package.json`, `package-lock.json`, `tsconfig.json`.",
+            "`.gitignore` excludes `node_modules`, `.tmp`, `dist`.",
+            "`package.json` has `typescript`, `eslint`, `eslint-plugin-powerbi-visuals`, and the lint command `npx eslint . --ext .js,.jsx,.ts,.tsx`.",
+            "`privileges` contains no `WebAccess` (no external access)."
           ]
         }
       }
@@ -22640,6 +22877,30 @@
           "prerequisites": [
             "Graph API access with `Team.Create`, `Group.ReadWrite.All`, `Reports.Read.All`",
             "Teams Administrator role for governance settings"
+          ]
+        }
+      }
+    },
+    "ms-graph-omni": {
+      "category": "cloud",
+      "description": "Full Microsoft Graph + Entra admin + Office file ops MCP server (183 tools). Cert-based app-only auth via Azure Key Vault + delegated auth with persistent token cache — no device-code re-entry. Multi-tenant aware via MSGO_TENANTS_JSON. Covers Outlook, Teams, SharePoint, OneDrive, Planner, ToDo, OneNote, Users, Groups, Entra admin, Excel/Word/PowerPoint/Loop file ops, Search, Sites, Exchange admin, Power Platform, Intune, Defender, Power BI/Fabric, Azure Ops.",
+      "files": {
+        "manifest": "ms-graph-omni/.claude-plugin/plugin.json",
+        "readme": "ms-graph-omni/README.md",
+        "skills": [
+          "ms-graph-omni/skills/entra-app-kv-cert-auth/SKILL.md"
+        ],
+        "commands": [],
+        "agents": []
+      },
+      "domains": {
+        "cloud": {
+          "actions": [],
+          "prerequisites": [
+            "Azure CLI installed and `az login` against the target tenant",
+            "Global Admin OR (Application Administrator + Cloud Application Administrator) on the tenant for admin consent",
+            "Key Vault exists and you have `Key Vault Certificates Officer` role on it",
+            "Owner or Contributor on the subscription containing the Key Vault"
           ]
         }
       }
