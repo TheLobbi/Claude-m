@@ -1,8 +1,6 @@
 {
   "strictPluginScope": [
-    "fabric-gitops-cicd",
-    "powerbi-custom-visuals",
-    "powerbi-fabric"
+    "powerbi-custom-visuals"
   ],
   "sourceFiles": {
     "claudeCatalog": "CLAUDE.md",
@@ -9517,7 +9515,7 @@
     },
     "powerbi-custom-visuals": {
       "category": "analytics",
-      "description": "Build, debug, package, and certify custom Power BI visuals with the pbiviz toolchain — project scaffolding, capabilities and dataView mapping, the IVisual API, the modern format pane and formatting model, selection and cross-filtering, tooltips, unit testing, and AppSource certification",
+      "description": "Build, debug, package, and certify custom Power BI visuals with the pbiviz toolchain — project scaffolding, capabilities and dataView mapping, the IVisual API, the modern format pane and formatting model, selection and cross-filtering, tooltips, unit testing, and AppSource certification — plus declarative Deneb (Vega and Vega-Lite) specs with cross-filtering, theme colors, and templates",
       "files": {
         "manifest": "powerbi-custom-visuals/.claude-plugin/plugin.json",
         "readme": "powerbi-custom-visuals/README.md",
@@ -9529,6 +9527,7 @@
           "powerbi-custom-visuals/commands/pbiviz-certify.md",
           "powerbi-custom-visuals/commands/pbiviz-dataview.md",
           "powerbi-custom-visuals/commands/pbiviz-debug.md",
+          "powerbi-custom-visuals/commands/pbiviz-deneb.md",
           "powerbi-custom-visuals/commands/pbiviz-format-pane.md",
           "powerbi-custom-visuals/commands/pbiviz-interactivity.md",
           "powerbi-custom-visuals/commands/pbiviz-migrate.md",
@@ -9563,6 +9562,11 @@
               "name": "pbiviz-debug",
               "description": "Run the pbiviz dev server and diagnose a custom visual — blank Developer Visual, empty dataView, format-pane errors, console exceptions, and cert issues.",
               "source": "powerbi-custom-visuals/commands/pbiviz-debug.md"
+            },
+            {
+              "name": "pbiviz-deneb",
+              "description": "Author or iterate a Deneb (Vega / Vega-Lite) specification for Power BI — bind the dataset, add cross-filtering, tooltips, theme colors, and responsive sizing, without building a .pbiviz.",
+              "source": "powerbi-custom-visuals/commands/pbiviz-deneb.md"
             },
             {
               "name": "pbiviz-format-pane",
@@ -9635,6 +9639,11 @@
               "source": "powerbi-custom-visuals/commands/pbiviz-debug.md"
             },
             {
+              "name": "pbiviz-deneb",
+              "description": "Author or iterate a Deneb (Vega / Vega-Lite) specification for Power BI — bind the dataset, add cross-filtering, tooltips, theme colors, and responsive sizing, without building a .pbiviz.",
+              "source": "powerbi-custom-visuals/commands/pbiviz-deneb.md"
+            },
+            {
               "name": "pbiviz-format-pane",
               "description": "Build or extend the modern Format pane (API 5.1+) — formatting model cards, groups, and slices via formatting model utils, with matching capabilities objects.",
               "source": "powerbi-custom-visuals/commands/pbiviz-format-pane.md"
@@ -9703,6 +9712,11 @@
               "name": "pbiviz-debug",
               "description": "Run the pbiviz dev server and diagnose a custom visual — blank Developer Visual, empty dataView, format-pane errors, console exceptions, and cert issues.",
               "source": "powerbi-custom-visuals/commands/pbiviz-debug.md"
+            },
+            {
+              "name": "pbiviz-deneb",
+              "description": "Author or iterate a Deneb (Vega / Vega-Lite) specification for Power BI — bind the dataset, add cross-filtering, tooltips, theme colors, and responsive sizing, without building a .pbiviz.",
+              "source": "powerbi-custom-visuals/commands/pbiviz-deneb.md"
             },
             {
               "name": "pbiviz-format-pane",

@@ -93,8 +93,22 @@ triggers:
   - pbiviz file
   - react power bi visual
   - deneb
+  - deneb visual
+  - deneb power bi
+  - deneb spec
+  - deneb template
   - vega visual
   - vega-lite
+  - vega spec
+  - vega-lite spec
+  - declarative power bi visual
+  - pbicolor
+  - pbiformat
+  - pbipatternsvg
+  - pbicrossfilterapply
+  - __selected__ deneb
+  - deneb cross-filter
+  - deneb dataset
   - svg dax measure
   - svg in power bi
   - html content visual
@@ -119,6 +133,19 @@ Custom Power BI visuals are web components — written in TypeScript, rendered w
 ## Choosing how to build
 
 The `pbiviz` SDK is the most powerful path, but not always the right one. Pick the lightest approach that meets the need: **SVG rendered from a DAX measure** (inline sparklines/KPIs in tables, no visual to build), **Deneb** (declarative Vega/Vega-Lite, certified), the **HTML Content** visual, **Charticulator** (no-code), or the full **pbiviz SDK** (TypeScript + D3/React) when you need lifecycle control, a custom format pane, advanced interactivity, or AppSource distribution. The full decision guide and low-code patterns are in `${CLAUDE_PLUGIN_ROOT}/skills/powerbi-custom-visuals/references/building-approaches.md`. The rest of this skill covers the SDK path in depth.
+
+## Deneb — declarative Vega / Vega-Lite (the no-build path)
+
+[Deneb](https://deneb.guide) is a **certified** custom visual that runs **Vega** and **Vega-Lite** JSON specs inside Power BI — no `pbiviz` toolchain, no build, yet with native cross-filtering, tooltips, context menus, and report-theme colors. Reach for it when the chart exists in the Vega ecosystem but not the Power BI core set and the user wants a certified result fast. Key facts:
+
+- **Bind data via the named dataset `dataset`** — `{ "data": { "name": "dataset" } }` (Vega-Lite) or a `dataset` data source (Vega). Field names are the column **display names** from Deneb's *Values* well.
+- **Provider:** Vega-Lite (concise `mark`+`encoding`, parameters) for standard charts; Vega (explicit scales/signals/marks) for bespoke layouts and manual interactivity.
+- **Cross-filtering:** enable it in Settings, then style on the injected **`__selected__`** field (`'on'`/`'off'`/`'neutral'`). Advanced (Vega-only) mode uses the `pbiCrossFilterSelection` signal with **`pbiCrossFilterApply(event, filter?, options?)`** / **`pbiCrossFilterClear()`** for brush/aggregate selection.
+- **Deneb expression functions:** **`pbiColor(index, shade?)`** (theme colors), **`pbiFormat(value, fmt, opts?)`** (Power BI format strings + locale), **`pbiPatternSVG(pattern, fg, bg)`** (texture fills, SVG mode).
+- **Responsive:** `"width": "container"`, `"height": "container"`, `"autosize": { "type": "fit", "contains": "padding" }`. Keep shared styling in the **Config** object; reuse charts via the **template** (`usermeta`) system.
+- **Certified-build limits:** no external `data.url`, remote images, or external fonts — all data flows through `dataset`.
+
+Run `/pbiviz-deneb` to author or iterate a spec. Full reference: `${CLAUDE_PLUGIN_ROOT}/skills/powerbi-custom-visuals/references/deneb-vega.md`; copy-paste specs: `${CLAUDE_PLUGIN_ROOT}/skills/powerbi-custom-visuals/examples/deneb-specs.md`.
 
 ## The visual lifecycle at a glance
 
@@ -233,6 +260,7 @@ Microsoft ships helper packages so you don't reinvent common chart plumbing: `po
 | File | Path | Content |
 |------|------|---------|
 | Building approaches | `${CLAUDE_PLUGIN_ROOT}/skills/powerbi-custom-visuals/references/building-approaches.md` | Choosing SDK vs Deneb vs SVG-via-DAX vs HTML Content vs Charticulator; React + pbiviz MCP |
+| Deneb (Vega/Vega-Lite) | `${CLAUDE_PLUGIN_ROOT}/skills/powerbi-custom-visuals/references/deneb-vega.md` | Deneb editor, `dataset` binding, cross-filter (`__selected__`, `pbiCrossFilterApply`), `pbiColor`/`pbiFormat`/`pbiPatternSVG`, themes, templates, certified limits |
 | Environment setup | `${CLAUDE_PLUGIN_ROOT}/skills/powerbi-custom-visuals/references/environment-setup.md` | Node, pbiviz install, dev mode, account/SSL setup |
 | Project structure | `${CLAUDE_PLUGIN_ROOT}/skills/powerbi-custom-visuals/references/project-structure.md` | Folder layout, `pbiviz.json`, `tsconfig`, `package.json` |
 | Capabilities | `${CLAUDE_PLUGIN_ROOT}/skills/powerbi-custom-visuals/references/capabilities.md` | privileges, dataRoles, mappings, objects, feature flags |
@@ -253,3 +281,4 @@ Microsoft ships helper packages so you don't reinvent common chart plumbing: `po
 | Formatting settings | `${CLAUDE_PLUGIN_ROOT}/skills/powerbi-custom-visuals/examples/formatting-settings.md` | `settings.ts` cards/groups/slices + conditional formatting |
 | Config files | `${CLAUDE_PLUGIN_ROOT}/skills/powerbi-custom-visuals/examples/pbiviz-and-config.md` | `pbiviz.json`, `tsconfig.json`, `package.json`, `.eslintrc` |
 | Scaffold walkthrough | `${CLAUDE_PLUGIN_ROOT}/skills/powerbi-custom-visuals/examples/scaffold-walkthrough.md` | End-to-end: new → develop → start → package → certify |
+| Deneb specs | `${CLAUDE_PLUGIN_ROOT}/skills/powerbi-custom-visuals/examples/deneb-specs.md` | Copy-paste Vega/Vega-Lite specs: cross-filter bar, rolling-mean line, bullet, pattern fills, advanced-mode Vega, theme config, template `usermeta` |

@@ -48,7 +48,7 @@
 
 | Component | Items |
 |---|---|
-| **Commands** | `/pbiviz-setup` · `/pbiviz-scaffold` · `/pbiviz-capabilities` · `/pbiviz-dataview` · `/pbiviz-format-pane` · `/pbiviz-interactivity` · `/pbiviz-debug` · `/pbiviz-package` · `/pbiviz-certify` · `/pbiviz-migrate` |
+| **Commands** | `/pbiviz-setup` · `/pbiviz-scaffold` · `/pbiviz-capabilities` · `/pbiviz-dataview` · `/pbiviz-format-pane` · `/pbiviz-interactivity` · `/pbiviz-debug` · `/pbiviz-package` · `/pbiviz-certify` · `/pbiviz-migrate` · `/pbiviz-deneb` |
 | **Agents** | `visual-reviewer` · `visual-performance-advisor` |
 | **Skills** | `powerbi-custom-visuals` |
 
@@ -126,6 +126,7 @@ Comprehensive knowledge plugin for **building custom Power BI visuals** — from
 | Area | What Claude Can Do |
 |------|-------------------|
 | Choose an approach | Recommend SDK vs Deneb (Vega/Vega-Lite) vs SVG-via-DAX vs HTML Content vs Charticulator |
+| Deneb (Vega/Vega-Lite) | Author declarative specs: bind the `dataset`, cross-filter via `__selected__`/`pbiCrossFilterApply`, theme with `pbiColor`, format with `pbiFormat`, build reusable templates |
 | Environment | Install/verify Node + `pbiviz`, trust the dev cert, enable developer mode |
 | Scaffolding | `pbiviz new`, tailor the project to a categorical/table/matrix/single mapping |
 | Capabilities | Author `capabilities.json` — data roles, dataView mappings, conditions, objects, privileges, feature flags |
@@ -152,6 +153,7 @@ Comprehensive knowledge plugin for **building custom Power BI visuals** — from
 | `/pbiviz-package` | Fill metadata, bump version, and build the `.pbiviz` |
 | `/pbiviz-certify` | Certification readiness audit + AppSource submission prep |
 | `/pbiviz-migrate` | Upgrade API version and modernize the format pane |
+| `/pbiviz-deneb` | Author/iterate a Deneb Vega or Vega-Lite spec (cross-filter, tooltips, theme colors, templates) |
 
 ## Agents
 
@@ -170,6 +172,7 @@ powerbi-custom-visuals/
 │   ├── SKILL.md
 │   ├── references/
 │   │   ├── building-approaches.md
+│   │   ├── deneb-vega.md
 │   │   ├── environment-setup.md
 │   │   ├── project-structure.md
 │   │   ├── capabilities.md
@@ -185,7 +188,8 @@ powerbi-custom-visuals/
 │       ├── capabilities-json.md
 │       ├── formatting-settings.md
 │       ├── pbiviz-and-config.md
-│       └── scaffold-walkthrough.md
+│       ├── scaffold-walkthrough.md
+│       └── deneb-specs.md
 ├── commands/
 │   ├── pbiviz-setup.md
 │   ├── pbiviz-scaffold.md
@@ -196,7 +200,8 @@ powerbi-custom-visuals/
 │   ├── pbiviz-debug.md
 │   ├── pbiviz-package.md
 │   ├── pbiviz-certify.md
-│   └── pbiviz-migrate.md
+│   ├── pbiviz-migrate.md
+│   └── pbiviz-deneb.md
 └── agents/
     ├── visual-reviewer.md
     └── visual-performance-advisor.md
@@ -204,7 +209,7 @@ powerbi-custom-visuals/
 
 ## Trigger Keywords
 
-custom power bi visual, pbiviz, powerbi-visuals-tools, pbiviz new, pbiviz package, ivisual, visual.ts, capabilities.json, pbiviz.json, dataview mapping, data roles, categorical data view, matrix data view, getformattingmodel, format pane, formatting model, formattingmodel utils, selection manager, cross filtering visual, supportshighlight, visual tooltips, context menu visual, drill down visual, landing page visual, launchurl, rendering events api, color palette, fetch more data, data reduction algorithm, conditional formatting visual, certified power bi visual, appsource visual, partner center visual, developer visual, d3 power bi visual
+custom power bi visual, pbiviz, powerbi-visuals-tools, pbiviz new, pbiviz package, ivisual, visual.ts, capabilities.json, pbiviz.json, dataview mapping, data roles, categorical data view, matrix data view, getformattingmodel, format pane, formatting model, formattingmodel utils, selection manager, cross filtering visual, supportshighlight, visual tooltips, context menu visual, drill down visual, landing page visual, launchurl, rendering events api, color palette, fetch more data, data reduction algorithm, conditional formatting visual, certified power bi visual, appsource visual, partner center visual, developer visual, d3 power bi visual, deneb, deneb spec, deneb template, vega, vega-lite, declarative power bi visual, pbicolor, pbiformat, pbipatternsvg, pbicrossfilterapply, deneb cross-filter
 
 ## Author
 
