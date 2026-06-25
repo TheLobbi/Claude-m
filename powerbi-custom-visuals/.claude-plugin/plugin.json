@@ -1,7 +1,7 @@
 {
   "name": "powerbi-custom-visuals",
-  "version": "1.0.0",
-  "description": "Build, debug, package, and certify custom Power BI visuals with the pbiviz toolchain — project scaffolding, capabilities and dataView mapping, the IVisual API, the modern format pane and formatting model, selection and cross-filtering, tooltips, unit testing, and AppSource certification",
+  "version": "1.1.0",
+  "description": "Build, debug, package, and certify custom Power BI visuals with the pbiviz toolchain — project scaffolding, capabilities and dataView mapping, the IVisual API, the modern format pane and formatting model, selection and cross-filtering, tooltips, unit testing, and AppSource certification — plus declarative Deneb (Vega and Vega-Lite) specs with cross-filtering, theme colors, and templates",
   "author": {
     "name": "Markus Ahling"
   },
@@ -24,7 +24,11 @@
     "tooltips",
     "appsource",
     "certification",
-    "visual-development"
+    "visual-development",
+    "deneb",
+    "vega",
+    "vega-lite",
+    "declarative-visuals"
   ],
   "skills": [
     "./skills/powerbi-custom-visuals/"
@@ -39,7 +43,8 @@
     "./commands/pbiviz-debug.md",
     "./commands/pbiviz-package.md",
     "./commands/pbiviz-certify.md",
-    "./commands/pbiviz-migrate.md"
+    "./commands/pbiviz-migrate.md",
+    "./commands/pbiviz-deneb.md"
   ],
   "agents": [
     "./agents/visual-reviewer.md",

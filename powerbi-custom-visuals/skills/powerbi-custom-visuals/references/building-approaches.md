@@ -25,11 +25,14 @@ Full TypeScript visuals built with `powerbi-visuals-tools`. Render with **D3**, 
 
 ## 2. Deneb — Vega and Vega-Lite
 
-[Deneb](https://deneb-viz.github.io) is a **certified** custom visual that brings the full declarative **Vega** and **Vega-Lite** grammars into Power BI, including animation, with native Power BI interactivity (cross-filtering, tooltips, themes).
+[Deneb](https://deneb.guide) is a **certified** custom visual that brings the full declarative **Vega** and **Vega-Lite** grammars into Power BI, including animation, with native Power BI interactivity (cross-filtering, cross-highlighting, tooltips, context menus, report themes).
 
-- Bind the Power BI dataset to a Vega/Vega-Lite spec; iterate in-visual without a build step.
-- Best when the chart type exists in the Vega ecosystem but not in core Power BI (e.g. FT Visual Vocabulary chart types) and you want it certified.
-- Resources: Deneb docs and community gallery (`deneb-viz.github.io/community/resources`), `avatorl/Deneb-Vega-Templates`, `PBI-David/Deneb-Showcase`.
+- Bind the Power BI dataset to a Vega/Vega-Lite spec via the named dataset **`dataset`**; iterate in-visual without a build step or the `pbiviz` toolchain.
+- **Vega-Lite** for concise standard charts; **Vega** for explicit scales/signals/marks and manual interactivity.
+- Power BI integration uses Deneb's own identifiers: the **`__selected__`** cross-filter field, the **`pbiCrossFilterApply`/`pbiCrossFilterClear`** expressions, and **`pbiColor`/`pbiFormat`/`pbiPatternSVG`** helpers. Certified build allows **no external resources** (no `data.url`, remote images, or external fonts).
+- Best when the chart type exists in the Vega ecosystem but not in core Power BI (e.g. FT Visual Vocabulary chart types, bullet/radial/sunburst) and you want it certified.
+- **Deep dive:** `deneb-vega.md` in this skill (editor, dataset binding, interactivity, themes, templates, limits) and copy-paste specs in `examples/deneb-specs.md`. Run `/pbiviz-deneb` to author a spec.
+- Resources: Deneb docs and community gallery (<https://deneb.guide>), `avatorl/Deneb-Vega-Templates`, `PBI-David/Deneb-Showcase`, kerrykolosko.com.
 
 ## 3. SVG / HTML rendered from a DAX measure (no custom visual)
 
