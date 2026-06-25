@@ -15,7 +15,7 @@
 <tr>
 <td align="center"><b>Category</b><br /><code>Analytics</code></td>
 <td align="center"><b>Surfaces</b><br /><sub>Power BI · pbiviz · powerbi-visuals-api · D3 · TypeScript</sub></td>
-<td align="center"><b>Version</b><br /><code>1.0.0</code></td>
+<td align="center"><b>Version</b><br /><code>1.1.0</code></td>
 <td align="center"><b>Marketplace</b><br /><code>claude-m-microsoft-marketplace</code></td>
 </tr>
 </table>
