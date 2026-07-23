@@ -86,4 +86,75 @@ export const copilot_retrieve = makeTool({
   },
 });
 
-export const copilotTools = [copilot_retrieve];
+/**
+ * Meeting AI Insights — AI-generated meeting notes, action items, and mention events
+ * from transcribed Teams meetings. Part of the Copilot API namespace: delegated auth,
+ * Copilot-licensed user only. Insights appear after the meeting ends (up to ~4h delay).
+ * GET /copilot/users/{userId}/onlineMeetings/{onlineMeetingId}/aiInsights[/{aiInsightId}]
+ * Docs: https://learn.microsoft.com/en-us/microsoftteams/platform/graph-api/meeting-transcripts/meeting-insights
+ */
+export const copilot_meeting_insights = makeTool({
+  name: "copilot_meeting_insights",
+  namespace: "meetings",
+  mode: "delegated",
+  description:
+    "Fetch AI-generated Teams meeting insights (meetingNotes, actionItems, viewpoint.mentionEvents) for a " +
+    "Copilot-licensed user. Omit aiInsightId to LIST all insight objects for the meeting; provide it to GET " +
+    "the full detailed insight. Requires transcription/recording to have been on. Insights are available only " +
+    "after the meeting ends and may take up to ~4 hours.",
+  inputSchema: z.object({
+    userId: z.string().describe("Organizer/user id (AAD object id) who owns the online meeting."),
+    onlineMeetingId: z
+      .string()
+      .describe("onlineMeeting id. If you only have the join URL, resolve it via the onlineMeetings API first."),
+    aiInsightId: z
+      .string()
+      .optional()
+      .describe("Optional. When provided, returns the full insight object; when omitted, lists all insights."),
+  }),
+  annotations: { readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: true },
+  call: async ({ userId, onlineMeetingId, aiInsightId }, client) => {
+    const base = `/copilot/users/${userId}/onlineMeetings/${onlineMeetingId}/aiInsights`;
+    return await client.api(aiInsightId ? `${base}/${aiInsightId}` : base).get();
+  },
+});
+
+/**
+ * Microsoft 365 Copilot usage reports — tenant-level adoption metrics. App-only (admin),
+ * Reports.Read.All. Functions return a stream (CSV by default). period is one of D7/D30/D90/D180.
+ * Docs: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api/admin-settings/reports/resources/copilotreportroot
+ */
+export const copilot_usage_report = makeTool({
+  name: "copilot_usage_report",
+  namespace: "analytics",
+  mode: "app",
+  description:
+    "Get tenant Microsoft 365 Copilot usage reports (admin). 'userCountSummary' = aggregated active/enabled " +
+    "users; 'userCountTrend' = daily trend; 'usageUserDetail' = most recent per-user activity. Returns the " +
+    "report stream (CSV). Requires Reports.Read.All. period is D7/D30/D90/D180; usageUserDetail also accepts a date.",
+  inputSchema: z.object({
+    report: z
+      .enum(["userCountSummary", "userCountTrend", "usageUserDetail"])
+      .describe("Which Copilot usage report to run."),
+    period: z
+      .enum(["D7", "D30", "D90", "D180"])
+      .default("D7")
+      .describe("Aggregation window. Ignored when 'date' is supplied for usageUserDetail."),
+    date: z
+      .string()
+      .optional()
+      .describe("usageUserDetail only: a single day YYYY-MM-DD (within the last 30 days). Overrides period."),
+  }),
+  annotations: { readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: true },
+  call: async ({ report, period, date }, client) => {
+    const fn = {
+      userCountSummary: "getMicrosoft365CopilotUserCountSummary",
+      userCountTrend: "getMicrosoft365CopilotUserCountTrend",
+      usageUserDetail: "getMicrosoft365CopilotUsageUserDetail",
+    }[report];
+    const arg = report === "usageUserDetail" && date ? `date=${date}` : `period='${period}'`;
+    return await client.api(`/reports/${fn}(${arg})`).get();
+  },
+});
+
+export const copilotTools = [copilot_retrieve, copilot_meeting_insights, copilot_usage_report];
