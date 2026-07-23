@@ -4,8 +4,8 @@
   "clientInstallable": true,
   "namespaces": ["collaboration"],
   "resources": ["https://graph.microsoft.com"],
-  "graphApplicationPermissions": ["Mail.ReadWrite", "Mail.Send", "Calendars.ReadWrite", "Contacts.ReadWrite", "Files.ReadWrite.All", "Sites.ReadWrite.All", "Chat.ReadWrite.All", "ChannelMessage.Read.All", "Team.ReadBasic.All", "Tasks.ReadWrite.All", "Notes.ReadWrite.All"],
-  "graphDelegatedPermissions": ["Mail.ReadWrite", "Mail.Send", "Calendars.ReadWrite", "Contacts.ReadWrite", "Files.ReadWrite.All", "Sites.ReadWrite.All", "Chat.ReadWrite", "ChannelMessage.Send", "Tasks.ReadWrite", "Notes.ReadWrite.All"],
-  "tools": ["mail_*", "calendar_*", "contacts_*", "teams_*", "sharepoint_*", "onedrive_*", "planner_*", "todo_*", "onenote_*", "excel_*", "search_*"],
+  "graphApplicationPermissions": ["Mail.ReadWrite", "Mail.Send", "Calendars.ReadWrite", "Contacts.ReadWrite", "Files.ReadWrite.All", "Sites.ReadWrite.All", "Chat.ReadWrite.All", "ChannelMessage.Read.All", "Team.ReadBasic.All", "Tasks.ReadWrite.All", "Notes.ReadWrite.All", "ExternalItem.Read.All"],
+  "graphDelegatedPermissions": ["Mail.ReadWrite", "Mail.Send", "Calendars.ReadWrite", "Contacts.ReadWrite", "Files.ReadWrite.All", "Sites.ReadWrite.All", "Chat.ReadWrite", "ChannelMessage.Send", "Tasks.ReadWrite", "Notes.ReadWrite.All", "ExternalItem.Read.All"],
+  "tools": ["mail_*", "calendar_*", "contacts_*", "teams_*", "sharepoint_*", "onedrive_*", "planner_*", "todo_*", "onenote_*", "excel_*", "search_*", "copilot_*"],
   "prerequisites": ["Microsoft Graph admin consent", "Teams message send tools require delegated user consent"]
 }
