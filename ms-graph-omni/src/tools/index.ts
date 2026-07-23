@@ -41,6 +41,7 @@ import { intuneTools } from "./intune.js";
 import { securityTools } from "./security.js";
 import { analyticsTools } from "./analytics.js";
 import { azureTools } from "./azureOps.js";
+import { copilotTools } from "./copilot.js";
 
 export const tools: ToolDef<any>[] = [
   // proof-of-life
@@ -85,4 +86,6 @@ export const tools: ToolDef<any>[] = [
   ...securityTools,
   ...analyticsTools,
   ...azureTools,
+  // Microsoft 365 Copilot APIs — AI-grounded retrieval (delegated + Copilot license).
+  ...copilotTools,
 ];
