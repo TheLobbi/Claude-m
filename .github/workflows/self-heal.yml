@@ -1,0 +1,13 @@
+# Self-heal caller - fires when a self-heal issue is labeled, and calls the
+# central AI-fix pipeline in wagonworks-dev. Inert by default (SELF_HEAL_ENABLED).
+name: self-heal
+on:
+  issues:
+    types: [labeled]
+jobs:
+  heal:
+    if: github.event.label.name == 'self-heal'
+    uses: TheLobbi/wagonworks-dev/.github/workflows/self-heal.yml@main
+    with:
+      issue-number: ${{ github.event.issue.number }}
+    secrets: inherit

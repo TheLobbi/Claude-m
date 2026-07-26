@@ -1,0 +1,49 @@
+name: Self-heal (internal tool failure)
+description: Report a failure in an internal tool we own so the AI-fix pipeline can analyze, test, fix, and open a PR.
+title: "self-heal: <tool> - <one-line failure>"
+labels: ["self-heal"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        For internal tools we own (plugin / MCP / skill / script) that failed
+        in use. Not for actively-developed code or third-party tools. The
+        self-heal label triggers the AI-fix workflow (inert until enabled).
+  - type: input
+    id: tool
+    attributes:
+      label: Tool
+      description: Name + kind (mcp / plugin / skill / script) and version if known.
+    validations: { required: true }
+  - type: textarea
+    id: error
+    attributes:
+      label: Exact error
+      render: text
+    validations: { required: true }
+  - type: textarea
+    id: repro
+    attributes:
+      label: Minimal reproduction
+      render: text
+    validations: { required: true }
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+    validations: { required: true }
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      placeholder: "OS + runtime versions"
+    validations: { required: true }
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: Scope confirmation
+      options:
+        - label: This is an internal tool we own (not third-party, not customer code).
+          required: true
+        - label: It failed in USE, not while being actively developed.
+          required: true
