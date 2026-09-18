@@ -6,8 +6,13 @@ on:
     types: [labeled]
 jobs:
   heal:
-    if: github.event.label.name == 'self-heal'
-    uses: TheLobbi/wagonworks-dev/.github/workflows/self-heal.yml@main
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+    if: github.event.label.name == 'self-heal' && vars.SELF_HEAL_ENABLED == 'true'
+    uses: TheLobbi/wagonworks-dev/.github/workflows/self-heal.yml@97ef1fb8b02e82d44800f27c814601adccbda6a2
     with:
       issue-number: ${{ github.event.issue.number }}
-    secrets: inherit
+    secrets:
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
