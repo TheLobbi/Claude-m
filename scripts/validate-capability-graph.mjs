@@ -6,17 +6,14 @@ const rootDir = process.cwd();
 const artifactsDir = path.join(rootDir, 'artifacts');
 const outputPath = path.join(artifactsDir, 'capability-graph.json');
 const marketplacePath = path.join(rootDir, '.claude-plugin', 'marketplace.json');
-const claudeCatalogPath = path.join(rootDir, 'CLAUDE.md');
 
 const marketplace = JSON.parse(fs.readFileSync(marketplacePath, 'utf8'));
-const claudeCatalog = parseClaudeCatalog(fs.readFileSync(claudeCatalogPath, 'utf8'));
 const strictPlugins = detectChangedPlugins();
 
 let hasError = false;
 const graph = {
   strictPluginScope: Array.from(strictPlugins).sort(),
   sourceFiles: {
-    claudeCatalog: toRepoPath(claudeCatalogPath),
     marketplace: toRepoPath(marketplacePath)
   },
   plugins: {}
@@ -40,7 +37,6 @@ for (const pluginEntry of marketplace.plugins ?? []) {
   const skillFiles = getSkillFiles(skillsDir);
   const commandFiles = getMarkdownFiles(commandsDir);
   const agentFiles = getMarkdownFiles(agentsDir);
-  const catalogEntry = claudeCatalog.get(pluginEntry.name);
 
   graph.plugins[pluginEntry.name] = {
     category: pluginEntry.category,
@@ -62,7 +58,7 @@ for (const pluginEntry of marketplace.plugins ?? []) {
   const declaresLspServers = manifest.lspServers && Object.keys(manifest.lspServers).length > 0;
   const declaresHooks = manifest.hooks || fs.existsSync(path.join(pluginDir, 'hooks'));
   const isInfrastructurePlugin = hasPackageJson || hasMcpConfig || declaresMcpServers || declaresLspServers || declaresHooks;
-  validateDrift({ pluginEntry, manifest, catalogEntry, pluginDir, manifestPath, readme, readmePath, isStrict });
+  validateDrift({ pluginEntry, manifest, pluginDir, manifestPath, readme, readmePath, isStrict });
   validateIntegrationMetadata({ pluginEntry, readme, readmePath, skillFiles, commandFiles, agentFiles, isStrict, isInfrastructurePlugin });
 }
 
@@ -84,7 +80,7 @@ function buildDomains(pluginEntry, readme, readmePath, skillFiles, commandFiles)
   return domains;
 }
 
-function validateDrift({ pluginEntry, manifest, catalogEntry, pluginDir, manifestPath, readme, readmePath, isStrict }) {
+function validateDrift({ pluginEntry, manifest, pluginDir, manifestPath, readme, readmePath, isStrict }) {
   const folderSlug = path.basename(pluginDir);
   // Plugins nested under a shared "plugins/" directory may use compact
   // folder names (e.g., plugins/teams for microsoft-teams-mcp). Only
@@ -96,17 +92,6 @@ function validateDrift({ pluginEntry, manifest, catalogEntry, pluginDir, manifes
   }
   if (manifest.name !== pluginEntry.name) {
     fail(`Name drift: ${toRepoPath(manifestPath)} has name "${manifest.name}" but marketplace expects "${pluginEntry.name}".`);
-  }
-  if (!catalogEntry) {
-    fail(`Missing CLAUDE catalog entry for "${pluginEntry.name}". Fix ${toRepoPath(claudeCatalogPath)} table.`);
-    return;
-  }
-  if (catalogEntry.category !== pluginEntry.category) {
-    fail(`Category drift for "${pluginEntry.name}": CLAUDE.md="${catalogEntry.category}" vs marketplace="${pluginEntry.category}". Fix ${toRepoPath(claudeCatalogPath)} or ${toRepoPath(marketplacePath)}.`);
-  }
-
-  if (isStrict && !isDescriptionAligned(catalogEntry.description, pluginEntry.description)) {
-    fail(`Description drift for "${pluginEntry.name}": CLAUDE.md and marketplace descriptions differ. Fix ${toRepoPath(claudeCatalogPath)} or ${toRepoPath(marketplacePath)}.`);
   }
   if (isStrict && !new RegExp(`\\b${escapeRegExp(pluginEntry.name)}\\b`, 'i').test(readme)) {
     fail(`README naming drift for "${pluginEntry.name}": slug is not referenced in ${toRepoPath(readmePath)}.`);
@@ -180,19 +165,6 @@ function runGitDiffFiles() {
   return [];
 }
 
-function parseClaudeCatalog(content) {
-  const catalog = new Map();
-  for (const line of content.split(/\r?\n/)) {
-    const trimmed = line.trim();
-    if (!trimmed.startsWith('| `') || !trimmed.endsWith('|')) continue;
-    const cells = trimmed.slice(1, -1).split('|').map((c) => c.trim());
-    const slugMatch = cells[0]?.match(/^`([^`]+)`$/);
-    if (!slugMatch || cells.length < 3) continue;
-    catalog.set(slugMatch[1], { category: cells[1], description: cells[2] });
-  }
-  return catalog;
-}
-
 function getSkillFiles(skillsDir) {
   if (!fs.existsSync(skillsDir) || !fs.statSync(skillsDir).isDirectory()) return [];
   return fs.readdirSync(skillsDir, { withFileTypes: true })
@@ -262,16 +234,6 @@ function extractAction(commandPath) {
     description: frontmatter?.[1].match(/(^|\n)description:\s*(.+)$/m)?.[2]?.trim() || h1 || '',
     source: toRepoPath(commandPath)
   };
-}
-
-function isDescriptionAligned(left, right) {
-  const l = normalize(left);
-  const r = normalize(right);
-  return l === r || l.includes(r) || r.includes(l);
-}
-
-function normalize(value) {
-  return String(value ?? '').toLowerCase().replace(/[—–]/g, '-').replace(/[^a-z0-9]+/g, ' ').trim();
 }
 
 function escapeRegExp(value) {

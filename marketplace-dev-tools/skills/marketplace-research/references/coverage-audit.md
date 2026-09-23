@@ -319,7 +319,6 @@ def generate_test_scenarios(plugin_coverage: dict) -> list[dict]:
 
 # Marketplace readiness
 [ ] Plugin listed in .claude-plugin/marketplace.json
-[ ] CLAUDE.md table updated with new plugin row
 [ ] README.md has installation instructions
 [ ] Capability graph artifact updated (artifacts/capability-graph.json)
 [ ] LF line endings (not CRLF)
@@ -340,7 +339,6 @@ A plugin is marketplace-ready when it meets ALL of the following:
 | Permissions clearly listed | Admin can evaluate consent requirements |
 | No breaking changes to existing plugins | Check capability graph for conflicts |
 | README.md installation instructions complete | User can onboard in < 5 minutes |
-| CLAUDE.md table entry added | Plugin discoverable by users |
 
 ---
 

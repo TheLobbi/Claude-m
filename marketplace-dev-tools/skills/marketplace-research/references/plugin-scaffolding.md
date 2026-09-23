@@ -368,7 +368,6 @@ npm run validate:all
 # [ ] Progressive disclosure section in SKILL.md
 # [ ] Reference files are 200–500 lines
 # [ ] No hardcoded secrets or real credentials in examples
-# [ ] CLAUDE.md table updated with new plugin entry
 ```
 
 ---

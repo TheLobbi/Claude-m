@@ -3,7 +3,7 @@
  * sync-marketplace.mjs
  *
  * Syncs plugin descriptions and metadata from per-plugin plugin.json manifests
- * into .claude-plugin/marketplace.json and CLAUDE.md so the marketplace stays
+ * into .claude-plugin/marketplace.json so the marketplace stays
  * up-to-date without manual copy-paste.
  *
  * Usage:
@@ -15,7 +15,6 @@ import path from "node:path";
 
 const rootDir = process.cwd();
 const marketplacePath = path.join(rootDir, ".claude-plugin", "marketplace.json");
-const claudePath = path.join(rootDir, "CLAUDE.md");
 const dryRun = !process.argv.includes("--write");
 
 if (dryRun) {
@@ -25,11 +24,8 @@ if (dryRun) {
 // ── Load sources ──────────────────────────────────────────────────────────────
 
 const marketplace = JSON.parse(fs.readFileSync(marketplacePath, "utf8"));
-const claudeMd = fs.readFileSync(claudePath, "utf8");
 
 let marketplaceChanged = false;
-let claudeChanged = false;
-let updatedClaude = claudeMd;
 const changes = [];
 
 // ── Sync descriptions from plugin.json → marketplace.json ─────────────────
@@ -79,38 +75,10 @@ for (const entry of marketplace.plugins) {
   }
 }
 
-// ── Sync marketplace.json descriptions → CLAUDE.md table rows ─────────────
-
-for (const entry of marketplace.plugins) {
-  // Match the table row:  | `<slug>` | <category> | <description> |
-  const escapedName = entry.name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-  const rowPattern = new RegExp(
-    `^(\\| \`${escapedName}\` \\| \\S+ \\| )(.+?)( \\|)$`,
-    "m"
-  );
-  const match = updatedClaude.match(rowPattern);
-  if (!match) continue;
-
-  const currentDesc = match[2];
-  if (normalize(currentDesc) !== normalize(entry.description)) {
-    updatedClaude = updatedClaude.replace(
-      rowPattern,
-      `$1${entry.description}$3`
-    );
-    claudeChanged = true;
-    changes.push({
-      plugin: entry.name,
-      field: "CLAUDE.md description",
-      from: currentDesc,
-      to: entry.description,
-    });
-  }
-}
-
 // ── Report ────────────────────────────────────────────────────────────────────
 
 if (changes.length === 0) {
-  console.log("✓ Marketplace and CLAUDE.md are already in sync with plugin manifests.");
+  console.log("✓ Marketplace is already in sync with plugin manifests.");
   process.exit(0);
 }
 
@@ -129,10 +97,6 @@ if (!dryRun) {
     fs.writeFileSync(marketplacePath, JSON.stringify(marketplace, null, 2) + "\n", "utf8");
     console.log("✓ Updated .claude-plugin/marketplace.json");
   }
-  if (claudeChanged) {
-    fs.writeFileSync(claudePath, updatedClaude, "utf8");
-    console.log("✓ Updated CLAUDE.md");
-  }
 } else {
   console.log("(no files written — pass --write to apply)");
 }
@@ -150,14 +114,6 @@ function resolvePluginDir(entry) {
   }
   // Fall back to plugin name as directory
   return entry.name;
-}
-
-function normalize(value) {
-  return String(value ?? "")
-    .toLowerCase()
-    .replace(/[—–]/g, "-")
-    .replace(/[^a-z0-9]+/g, " ")
-    .trim();
 }
 
 function truncate(str, len) {

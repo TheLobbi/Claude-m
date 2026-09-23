@@ -1,7 +1,0 @@
-# Post-Refactor: Update Docs
-description: After refactoring, check if documentation needs updating.
-trigger: post-refactor
-checks:
-  - Review docs/context files for stale references.
-  - Update API docs if public interfaces changed.
-  - Update CLAUDE.md if project structure changed.

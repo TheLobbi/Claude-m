@@ -8,7 +8,6 @@ type MarketplacePlugin = {
 
 const repoRoot = path.resolve(__dirname, "..");
 const marketplacePath = path.join(repoRoot, ".claude-plugin", "marketplace.json");
-const claudeDocPath = path.join(repoRoot, "CLAUDE.md");
 
 function readJson<T>(filePath: string): T {
   return JSON.parse(fs.readFileSync(filePath, "utf8")) as T;
@@ -31,19 +30,6 @@ function getMarkdownFilesInDir(dirPath: string): string[] {
     .readdirSync(dirPath, { withFileTypes: true })
     .filter((entry) => entry.isFile() && entry.name.endsWith(".md"))
     .map((entry) => path.join(dirPath, entry.name));
-}
-
-function parseClaudePluginTableSlugs(): Set<string> {
-  const content = fs.readFileSync(claudeDocPath, "utf8");
-  const slugs = new Set<string>();
-
-  const rowRegex = /^\|\s*`([^`]+)`\s*\|/gm;
-  let match: RegExpExecArray | null = null;
-  while ((match = rowRegex.exec(content)) !== null) {
-    slugs.add(match[1]);
-  }
-
-  return slugs;
 }
 
 function hasFrontmatter(content: string): boolean {
@@ -181,12 +167,9 @@ describe("Documentation quality guardrails", () => {
     }
   });
 
-  test("install slugs are consistent across CLAUDE.md, marketplace.json, and plugin manifests", () => {
-    const claudeSlugs = parseClaudePluginTableSlugs();
+  test("install slugs are consistent across marketplace.json and plugin manifests", () => {
     const marketplace = readJson<{ plugins: MarketplacePlugin[] }>(marketplacePath);
     const marketplaceSlugs = new Set(marketplace.plugins.map((plugin) => plugin.name));
-
-    expect(claudeSlugs).toEqual(marketplaceSlugs);
 
     for (const plugin of localPlugins) {
       const pluginDir = path.join(repoRoot, plugin.source.replace(/^\.\//, ""));
@@ -194,7 +177,6 @@ describe("Documentation quality guardrails", () => {
       const manifest = readJson<{ name: string }>(pluginManifestPath);
 
       expect(manifest.name).toBe(plugin.name);
-      expect(claudeSlugs.has(manifest.name)).toBe(true);
       expect(marketplaceSlugs.has(manifest.name)).toBe(true);
     }
   });

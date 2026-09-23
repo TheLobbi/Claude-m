@@ -3,10 +3,8 @@ import path from 'node:path';
 
 const rootDir = process.cwd();
 const marketplacePath = path.join(rootDir, '.claude-plugin', 'marketplace.json');
-const claudeCatalogPath = path.join(rootDir, 'CLAUDE.md');
 
 const marketplace = JSON.parse(fs.readFileSync(marketplacePath, 'utf8'));
-const claudeCatalog = parseClaudeCatalog(fs.readFileSync(claudeCatalogPath, 'utf8'));
 
 let hasError = false;
 
@@ -116,19 +114,6 @@ for (const pluginEntry of marketplace.plugins ?? []) {
     fail(`Name mismatch for ${pluginEntry.source}: marketplace name is "${pluginEntry.name}" but manifest name is "${manifestName}"`);
   }
 
-  const catalogEntry = claudeCatalog.get(pluginEntry.name);
-  if (!catalogEntry) {
-    fail(`Plugin ${pluginEntry.name} is missing from CLAUDE.md plugin catalog table`);
-  } else {
-    if (catalogEntry.category !== pluginEntry.category) {
-      fail(`Category drift for ${pluginEntry.name}: marketplace="${pluginEntry.category}" CLAUDE.md="${catalogEntry.category}"`);
-    }
-
-    if (!sameText(catalogEntry.description, pluginEntry.description)) {
-      fail(`Description drift for ${pluginEntry.name}: marketplace and CLAUDE.md descriptions differ`);
-    }
-  }
-
   for (const commandPath of commandFiles) {
     lintCommand(commandPath);
   }
@@ -139,39 +124,6 @@ if (hasError) {
 }
 
 console.log('Knowledge plugin validation passed.');
-
-function parseClaudeCatalog(content) {
-  const catalog = new Map();
-  const lines = content.split(/\r?\n/);
-
-  for (const line of lines) {
-    const trimmed = line.trim();
-    if (!trimmed.startsWith('| `') || !trimmed.endsWith('|')) {
-      continue;
-    }
-
-    const cells = trimmed
-      .slice(1, -1)
-      .split('|')
-      .map((cell) => cell.trim());
-
-    if (cells.length < 3) {
-      continue;
-    }
-
-    const slugMatch = cells[0].match(/^`([^`]+)`$/);
-    if (!slugMatch) {
-      continue;
-    }
-
-    catalog.set(slugMatch[1], {
-      category: cells[1],
-      description: cells[2]
-    });
-  }
-
-  return catalog;
-}
 
 function hasSkillFile(skillsDir) {
   if (!fs.existsSync(skillsDir) || !fs.statSync(skillsDir).isDirectory()) {
@@ -238,18 +190,6 @@ function lintCommand(commandPath) {
   if (!hasNumberedList && !hasBulletList && !hasStepHeadings && !hasMultiSectionProcedure) {
     fail(`Command doc should include deterministic steps/checks as a list in ${toRepoPath(commandPath)}`);
   }
-}
-
-function sameText(left, right) {
-  return normalize(left) === normalize(right);
-}
-
-function normalize(value) {
-  return String(value ?? '')
-    .toLowerCase()
-    .replace(/[—–]/g, '-')
-    .replace(/[^a-z0-9]+/g, ' ')
-    .trim();
 }
 
 function toRepoPath(absolutePath) {

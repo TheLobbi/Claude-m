@@ -361,14 +361,12 @@ When adding a new plugin to the marketplace:
    }
    ```
 
-3. **CLAUDE.md** — add row to the Available Plugins table
-
-4. **Validation** — run:
+3. **Validation** — run:
    ```bash
    npm run validate:all
    ```
 
-5. **Commit** — stage all new/modified files and commit
+4. **Commit** — stage all new/modified files and commit
 
 ## Progressive Disclosure — Reference Files
 

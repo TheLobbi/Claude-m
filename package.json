@@ -22,9 +22,7 @@
     "validate:capability-graph": "node scripts/validate-capability-graph.mjs",
     "sync": "node scripts/sync-marketplace.mjs --write",
     "sync:dry": "node scripts/sync-marketplace.mjs",
-    "setup": "node scripts/deploy-setup.mjs --scan-repos",
-    "update": "node scripts/deploy-setup.mjs --scan-repos",
-    "deploy": "npm run sync && npm run setup && npm run validate:all && npm run build && npm test"
+    "deploy": "npm run sync && npm run validate:all && npm run build && npm test"
   },
   "repository": {
     "type": "git",

@@ -1,57 +1,30 @@
-# AGENTS.md
+# Working in Claude-m
 
-## Scope
-Applies to the entire `/workspace/Claude-m` repository unless a deeper `AGENTS.md` overrides it.
+This is a Claude plugin marketplace. Markdown under plugin `skills/`,
+`commands/`, and `agents/` is shipped behavior, not contributor documentation.
 
-## Mission
-Build and maintain high-quality Claude plugins and marketplace metadata with first-class Codex compatibility.
-Use root `CLAUDE.md` as the canonical marketplace source for plugin names, install slugs, categories, and validation flow.
+- `.claude-plugin/marketplace.json` owns install names, source paths and
+  categories. Per-plugin `.claude-plugin/plugin.json` owns descriptions;
+  `node scripts/sync-marketplace.mjs` previews synchronization and `--write`
+  applies it. Keep the marketplace name `claude-m-microsoft-marketplace` stable.
+- Most plugins live at the root; the original MCP bundles live under `plugins/`
+  and share TypeScript source in `src/`. `ms-graph-omni/` is a separate package.
+  Its `CLAUDE.md` is a manifest-loaded product entry point; preserve that loader.
+- Knowledge plugins need commands and discoverable skills. MCP, hook and LSP
+  plugins have different valid shapes; see `scripts/validate-plugins.mjs`.
+  Keep first-party marketplace entries strict and repair schema errors rather
+  than disabling validation.
+- Cross-plugin identity scoping and output redaction follow
+  [the integration context contract](docs/integration-context.md). Preserve
+  explicit tenant, subscription, cloud and permission checks before API calls;
+  never expose secrets or unredacted sensitive identifiers in reports.
+- [Fabric item ownership](docs/fabric-item-coverage-matrix.md) is parsed by tests
+  and routes overlapping plugin surfaces. Update it with ownership changes.
+- Repository changes do not authorize tenant provisioning, consent, deployment
+  or release. Plugin setup commands can have those effects; read their scope.
 
-## Required Build Workflow (Claude Plugins + Marketplace)
-1. Read root `CLAUDE.md` first.
-2. Confirm/update plugin metadata consistency across:
-   - plugin folder name
-   - install slug
-   - category/description
-   - README capability claims
-3. Ensure plugin structure includes (where applicable):
-   - `.claude-plugin/plugin.json`
-   - `skills/<name>/SKILL.md`
-   - `commands/*.md`
-   - `agents/*.md`
-   - `README.md`
-4. Validate that command docs are executable and deterministic.
-5. Validate reviewer agents have explicit output format and actionable checks.
-
-## Codex Documentation Expectations
-When authoring docs for Codex use:
-- Prefer precise paths and exact command examples.
-- Keep SKILL docs concise and use progressive disclosure.
-- Reference only needed files from `SKILL.md` (avoid broad, deep reference chasing).
-- Encode clear trigger phrases so capability routing is predictable.
-- State prerequisites (auth, tenant, subscription, permissions) explicitly.
-
-## Marketplace Correctness Rules
-- Installation pattern must remain:
-  - `/plugin install <plugin-name>@claude-m-microsoft-marketplace`
-- Marketplace bootstrap must remain:
-  - `/plugin marketplace add markus41/Claude-m`
-- Any new/renamed plugin requires root catalog updates in `CLAUDE.md`.
-- Do not publish contradictory names/slugs across docs.
-
-## Writing Standards
-- Use short imperative instructions.
-- Keep sections skimmable with headings and bullets.
-- Include: purpose, when to use, inputs/prereqs, outputs, and validation.
-- Avoid over-claiming runtime behavior not represented by repository assets.
-
-## Quality Gates Before Merge
-- Cross-file consistency check passes (`CLAUDE.md` ↔ plugin READMEs ↔ skills/commands/agents).
-- Trigger keywords in `SKILL.md` reflect natural user prompts.
-- Validation commands are present and accurate.
-- Examples are relevant to Microsoft ecosystems and safe by default.
-
-## Safety / Non-goals
-- Do not fabricate APIs, MCP tools, or command support.
-- Do not duplicate large references across multiple plugins; link to canonical docs.
-- Do not add extra process docs unless requested; prefer concise, maintainable guidance.
+Use `bun install` for root development. Run the relevant validators in
+[README.md](README.md#development), `bun run lint`, and `bun run test --runInBand`.
+The root Jest configuration excludes `ms-graph-omni`; changes there need its
+own package checks. Keep durable contributor constraints here and use source,
+manifests and tests for implementation catalogs.

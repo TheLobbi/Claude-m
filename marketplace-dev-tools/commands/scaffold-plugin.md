@@ -121,6 +121,6 @@ After generating all files:
 2. Verify plugin.json references are correct
 3. Display marketplace registration command:
    ```
-   Add to .claude-plugin/marketplace.json and CLAUDE.md, then run:
+   Add to .claude-plugin/marketplace.json, then run:
    npm run validate:all
    ```
